@@ -1,0 +1,26 @@
+---
+interface Props { kpis?: boolean }
+const { kpis = false } = Astro.props;
+const stages = [
+  { n: '01', name: 'Discovery', role: 'Traffic source', ex: 'Ads, blog, influencers, partners, etc.', kpi: 'Clicks & CTR, impressions, social engagement, SERP ranking' },
+  { n: '02', name: 'Destination', role: 'Engagement', ex: 'Landing page, info page, transactional page, product page, homepage', kpi: 'Visits, session depth, page engagement, time on site' },
+  { n: '03', name: '(Gate)', role: 'Micro-value', ex: 'Special offer, free course, challenge, waiting list, webinar, whitepaper, template, PLG sign-up, micro-transactions', kpi: 'Lead form conversion rate, form start or drop-off, number of sign-ups, gate content engagement', opt: true },
+  { n: '04', name: 'Nurture*', role: 'Education', ex: 'Email, push notification, remarketing, community, events', kpi: 'Email metrics (open rate, CTR, unsubscribes), MQL & SQL, time in funnel, number of touchpoints, likelihood to convert' },
+  { n: '05', name: 'Conversion', role: 'Macro-value', ex: 'Transaction (purchase, contract, etc.)', kpi: 'Time to conversion, lead-to-sale rate, number of sales, revenue, revenue per lead, ACV or AOV, CAC' },
+  { n: '06', name: 'Onboarding', role: 'Post-purchase', ex: 'Purchase confirmation, benefits, onboarding guide, shipping details', kpi: 'Email engagement, onboarding metrics (sessions or tutorial completed, course sign-up)' },
+  { n: '07', name: 'Upsell*', role: 'Expansion', ex: 'Special offers, campaigns, events, community, loyalty club, "you might also like", volume discount', kpi: 'Additional revenue, LTV, conversion rate, other nurture and conversion metrics' },
+  { n: '08', name: 'Promote', role: 'Referral', ex: 'Reviews, referral program, social sharing, brand ambassadors, growth loops', kpi: 'Number of shares, share-to-convert rate, other nurture and conversion metrics' },
+];
+---
+<div class="journey">
+  {stages.map((s) => (
+    <div class:list={['st', s.opt && 'opt']}>
+      <span class="n">{s.n}</span>
+      <b>{s.name}</b>
+      <span class="role">{s.role}</span>
+      <p>{s.ex}</p>
+      {kpis && <p class="kpi"><span class="cap">KPIs:</span> {s.kpi}</p>}
+    </div>
+  ))}
+</div>
+<p class="cap">* Nurture and upsell are not always linear and may appear several times. The gate is optional.</p>

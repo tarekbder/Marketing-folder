@@ -1,0 +1,201 @@
+topic: 05-customer-journey
+questions:
+  - id: q1
+    question: "How does the lecture define a customer journey?"
+    options:
+      - "A highly predictable and repeatable process that takes prospects through touchpoints to maximise revenue while minimising friction"
+      - "Any random path a customer takes online"
+      - "The product's feature roadmap"
+      - "A one-off campaign calendar"
+    answer: 0
+    explanation: "Often called a sales funnel. Its two ideal outcomes are contact details and/or revenue."
+
+  - id: q2
+    question: "Why is collecting contact details one of the two ideal outcomes of a journey?"
+    options:
+      - "It's required by GDPR"
+      - "It replaces the need for a product"
+      - "It lets you re-engage people more cheaply than through paid media"
+      - "It increases ad impressions"
+    answer: 2
+    explanation: "Owned contact data (e.g. email) makes re-engagement cheaper than buying the attention again."
+
+  - id: q3
+    question: "What does Google's 'messy middle' research describe?"
+    options:
+      - "The middle management layer of marketing teams"
+      - "Customers looping between exploration and evaluation before purchase"
+      - "The middle of the P&L"
+      - "Mid-sized companies"
+    answer: 1
+    explanation: "The answer: ensure brand presence, employ behavioural science, and close the gap between trigger and purchase."
+
+  - id: q4
+    question: "Why do businesses need a 'portfolio of journeys'?"
+    options:
+      - "Investors require at least five journeys"
+      - "One journey is always enough"
+      - "Journeys replace channels"
+      - "Different channels, campaigns, entry points, retention and expansion need tailored paths"
+    answer: 3
+    explanation: "Acquisition, channel-specific, retention & lifecycle, and expansion journeys can all exist at once."
+
+  - id: q5
+    question: "What is a GTM motion?"
+    options:
+      - "A single ad campaign"
+      - "The animation on a landing page"
+      - "A KPI for conversions"
+      - "The overarching go-to-market strategy within which journeys are created"
+    answer: 3
+    explanation: "If the journey is the customer's end-to-end process, the GTM motion is the strategy around it."
+
+  - id: q6
+    question: "Which GTM motion is 'try before you buy' with freemium or free trials (e.g. Figma, Canva)?"
+    options:
+      - "E-commerce"
+      - "Product-led growth (PLG)"
+      - "Sales-led"
+      - "Marketing-led"
+    answer: 1
+    explanation: "PLG: low–mid ticket, end user buys, days-to-weeks cycle."
+
+  - id: q7
+    question: "Which motion fits Workday or Salesforce Enterprise: high ticket, top-down buyer, months-long cycle, outbound + proposal?"
+    options:
+      - "PLG"
+      - "E-commerce"
+      - "Sales-led"
+      - "Marketing-led"
+    answer: 2
+    explanation: "Sales-led is 'find & get them'."
+
+  - id: q8
+    question: "Which motion is 'learn/follow, decide', converting through inbound + gate + sales (e.g. HubSpot)?"
+    options:
+      - "Marketing-led"
+      - "Sales-led"
+      - "E-commerce"
+      - "PLG"
+    answer: 0
+    explanation: "Marketing-led provides value first and converts gradually; ticket can be low to high."
+
+  - id: q9
+    question: "What is the key difference between an ICP and a persona?"
+    options:
+      - "ICP is for B2C, persona for B2B"
+      - "An ICP describes an entity/account; a persona describes a human buyer"
+      - "They are the same thing"
+      - "A persona describes a competitor"
+    answer: 1
+    explanation: "ICP is core to B2B for filtering and qualification; personas work in B2B and B2C for empathy and content."
+
+  - id: q10
+    question: "Which element belongs in an ICP rather than a persona?"
+    options:
+      - "Main quote"
+      - "Psychographics"
+      - "Family status"
+      - "Key triggers and catalysts, e.g. a funding round or leadership hire"
+    answer: 3
+    explanation: "ICPs also cover company profile, operational maturity, tech stack and requirements like minimum spend."
+
+  - id: q11
+    question: "Which four roles make up the B2B buying centre in the lecture?"
+    options:
+      - "Champion, buyer, end user, gatekeeper"
+      - "CEO, CFO, CTO, CMO"
+      - "Lead, prospect, customer, advocate"
+      - "Founder, investor, employee, partner"
+    answer: 0
+    explanation: "The buyer is the budget holder; the champion pushes internally; the gatekeeper controls access."
+
+  - id: q12
+    question: "Which persona elements does the lecture call the most overlooked but most important?"
+    options:
+      - "Age and photo"
+      - "Name and job title"
+      - "The quote, information consumption and purchase habits"
+      - "Income and education"
+    answer: 2
+    explanation: "They tell you where to reach people, how they compare and where they buy."
+
+  - id: q13
+    question: "What's the right way to fill in 'information consumption' in a persona?"
+    options:
+      - "List every social platform to be safe"
+      - "Leave it out for B2C"
+      - "Name the 1–2 places they consume this type of information and the specific people they follow"
+      - "Copy it from a competitor's persona"
+    answer: 2
+    explanation: "Specific platforms and thought leaders let you reach out or study their content."
+
+  - id: q14
+    question: "In journey design, what is the 'destination' stage?"
+    options:
+      - "Where people engage after discovery, e.g. a landing page, product page or homepage"
+      - "The final purchase"
+      - "The thank-you email"
+      - "The referral programme"
+    answer: 0
+    explanation: "Make sure the destination lets you keep the contact details, so platforms don't own your customers."
+
+  - id: q15
+    question: "What is the role of the (optional) gate stage?"
+    options:
+      - "Blocking competitors from your site"
+      - "Charging the full price upfront"
+      - "Collecting reviews"
+      - "Offering micro-value (e.g. a discount, free course, quiz, webinar) in exchange for contact details or commitment"
+    answer: 3
+    explanation: "E-commerce uses light gates; B2B lead gen uses substantial ones. Micro-transactions can also filter the audience."
+
+  - id: q16
+    question: "Which statement about nurture and upsell is correct?"
+    options:
+      - "They always happen once, in fixed order"
+      - "They aren't strictly sequential: they branch off the main flow and can appear several times"
+      - "They only exist in B2B"
+      - "Upsell can only happen after onboarding"
+    answer: 1
+    explanation: "In e-commerce, upsell often happens before the first purchase to grow the basket."
+
+  - id: q17
+    question: "Why does activation matter in the onboarding stage?"
+    options:
+      - "It's a legal requirement"
+      - "It replaces the need for support"
+      - "It's only about shipping details"
+      - "Customers have to actually use the product, which is critical for digital products"
+    answer: 3
+    explanation: "Onboarding covers confirmation and shipping, but activation decides whether the value lands."
+
+  - id: q18
+    question: "When analysing a journey, what should you fix first?"
+    options:
+      - "Button colours"
+      - "The font on the landing page"
+      - "The biggest drop-off point, using stage-specific KPIs"
+      - "The logo"
+    answer: 2
+    explanation: "Don't polish cosmetics before fixing the biggest leak, and track more than end-to-end conversion."
+
+  - id: q19
+    question: "Which KPI fits the 'Promote' stage?"
+    options:
+      - "SERP ranking"
+      - "Share-to-convert rate"
+      - "Time on site"
+      - "Lead form conversion rate"
+    answer: 1
+    explanation: "Promote KPIs: number of shares, share-to-convert rate and other nurture/conversion metrics."
+
+  - id: q20
+    question: "What does the SumUp–Manchester United sponsorship story show about B2B journeys?"
+    options:
+      - "Even deals with clear value can need years of nurturing"
+      - "Outbound never works"
+      - "Sponsorships close within a week"
+      - "Physical mail is obsolete"
+    answer: 0
+    explanation: "The club's outreach started in 2019 and the deal was signed in 2026, after seasons of contact."

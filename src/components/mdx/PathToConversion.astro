@@ -1,0 +1,12 @@
+---
+const cols = [
+  { name: 'Discover solution', items: ['SEO/GEO (search & AI)', 'Social', 'Ads', 'PR & partnerships', 'Community & events', 'Reviews & referrals'] },
+  { name: 'Experience brand', items: ['Website / storefront', 'Emails', 'Community & events', 'Social', 'Customer support', 'Packaging & delivery'] },
+  { name: 'Gain knowledge', items: ['Blog & knowledge base', 'PR', 'Newsletter', 'Social content (YT, IG, LI)', 'Community & events'] },
+  { name: 'Solve challenge', items: ['Use the product', 'Feel the benefits'] },
+];
+---
+<p class="cap">Real-life path to conversion: what are customers looking for?</p>
+<div class="ptc">
+  {cols.map((c) => <div><b>{c.name}</b><ul>{c.items.map((i) => <li>{i}</li>)}</ul></div>)}
+</div>

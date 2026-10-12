@@ -1,0 +1,8 @@
+---
+interface Props { title?: string; tone?: 'lime' | 'warn' | 'info' }
+const { title, tone = 'lime' } = Astro.props;
+---
+<div class:list={['callout', tone !== 'lime' && tone]}>
+  {title && <p class="callout-title">{title}</p>}
+  <slot />
+</div>

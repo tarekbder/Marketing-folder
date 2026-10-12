@@ -1,0 +1,201 @@
+topic: 06-roi-decision-making
+questions:
+  - id: q1
+    question: "What is the lesson of the artificial sweeteners example?"
+    options:
+      - "Sweeteners are always harmful"
+      - "Correlation isn't causation: ask follow-up questions, because one extra data point can change the interpretation"
+      - "Health headlines are always correct"
+      - "Only quantitative data matters"
+    answer: 1
+    explanation: "The participants were heavy or obese, so obesity itself may explain the cognitive decline."
+
+  - id: q2
+    question: "Which best describes a KPI?"
+    options:
+      - "Any raw number in a dashboard"
+      - "A time-bound target"
+      - "A selected metric that signals health, progress or problems"
+      - "A type of ad format"
+    answer: 2
+    explanation: "Metrics are raw; KPIs are the selected signals (fuel gauge); goals are time-bound targets (the destination)."
+
+  - id: q3
+    question: "Which pair is an example of vanity vs impact metrics?"
+    options:
+      - "Revenue vs churn"
+      - "Primary vs secondary data"
+      - "Leading vs lagging"
+      - "Page views vs qualified leads"
+    answer: 3
+    explanation: "Vanity metrics don't correlate with impact; impact metrics move the business forward."
+
+  - id: q4
+    question: "Add-to-cart is a lagging indicator for site visits but a leading indicator for revenue. What does this show?"
+    options:
+      - "Whether a metric is leading or lagging depends on context: your business model and journey"
+      - "Add-to-cart is a vanity metric"
+      - "Leading and lagging are the same"
+      - "Add-to-cart should not be tracked"
+    answer: 0
+    explanation: "Classification depends on what you're predicting."
+
+  - id: q5
+    question: "What is a North Star metric?"
+    options:
+      - "The company's total revenue"
+      - "The number of followers on social media"
+      - "A leading indicator that marks the moment customer value is realised and predicts revenue"
+      - "The highest-performing ad"
+    answer: 2
+    explanation: "Examples: creating a playlist on Spotify, making a number of connections early on Facebook."
+
+  - id: q6
+    question: "A company earning 60% of revenue from organic search pushed for more page views. What happened?"
+    options:
+      - "Revenue doubled"
+      - "Page views grew, but converting content declined, and the damage was hard to undo"
+      - "Nothing changed"
+      - "They stopped needing SEO"
+    answer: 1
+    explanation: "Track impact metrics alongside vanity ones; SEO problems are slow to fix."
+
+  - id: q7
+    question: "In a UTM, which parameter describes the TYPE of traffic (e.g. cpc, organic, referral)?"
+    options:
+      - "utm_medium"
+      - "utm_source"
+      - "utm_campaign"
+      - "utm_content"
+    answer: 0
+    explanation: "Source = where it comes from (google, meta); medium = type; campaign = which campaign; term = keyword; content = creative."
+
+  - id: q8
+    question: "What does a placeholder like {{ad.id}} in a UTM do?"
+    options:
+      - "It breaks the link"
+      - "It hides the URL from users"
+      - "It's a static value typed by hand"
+      - "It's a dynamic value the ad platform replaces automatically"
+    answer: 3
+    explanation: "Static values are typed manually (e.g. meta); dynamic ones are filled in by the platform."
+
+  - id: q9
+    question: "How does a cohort report differ from an aggregate report?"
+    options:
+      - "Cohort reports only show revenue"
+      - "Aggregate reports are always more accurate"
+      - "There is no difference"
+      - "A cohort report follows one group of customers over time; an aggregate report is a snapshot of a timeframe"
+    answer: 3
+    explanation: "Cohorts reveal falling retention or changing customer quality that aggregates hide."
+
+  - id: q10
+    question: "What does the P&L track, compared with the cash flow statement?"
+    options:
+      - "When money is incurred (performance), vs when money actually moves (liquidity, runway)"
+      - "Only marketing spend"
+      - "When money moves, vs when it's incurred"
+      - "Future forecasts only"
+    answer: 0
+    explanation: "A course delivered in Q4 but paid in Q1: incurred in Q4 (P&L), cash moves in Q1 (cash flow)."
+
+  - id: q11
+    question: "In the P&L, where do production, quality and cost of sales go?"
+    options:
+      - "OPEX"
+      - "EBITDA"
+      - "COGS"
+      - "Revenue"
+    answer: 2
+    explanation: "COGS = cost of goods sold. OPEX covers payroll, rent, software, legal."
+
+  - id: q12
+    question: "How is marketing efficiency calculated?"
+    options:
+      - "Net revenue ÷ UA spend"
+      - "UA spend ÷ net revenue"
+      - "Clicks ÷ impressions"
+      - "Profit ÷ headcount"
+    answer: 1
+    explanation: "The inverse, net revenue ÷ UA spend, is ROAS."
+
+  - id: q13
+    question: "Your marketing efficiency ratio rises from 25% to 30%. What does that signal?"
+    options:
+      - "Efficiency improved"
+      - "Efficiency got worse: you spend more per euro of revenue"
+      - "ROAS increased"
+      - "Revenue doubled"
+    answer: 1
+    explanation: "A lower spend ratio (or higher ROAS) means better efficiency."
+
+  - id: q14
+    question: "What's the reference marketing efficiency for a DTC e-commerce company at seed/launch stage?"
+    options:
+      - "Under 10%"
+      - "15%"
+      - "50%"
+      - "About 30%"
+    answer: 3
+    explanation: "DTC e-com: 30% → 25% → under 15%. B2B SaaS / DTC: 25% → 15% → under 10%. ±5%, UA spend only."
+
+  - id: q15
+    question: "The benchmark figures cover user acquisition spend only. What should you add for full marketing costs?"
+    options:
+      - "About 5–10 percentage points for personnel, tools, etc."
+      - "Nothing"
+      - "Double the figure"
+      - "The full OPEX"
+    answer: 0
+    explanation: "The benchmarks are UA spend only; team and tools come on top."
+
+  - id: q16
+    question: "Which attribution model gives 100% of the credit to the first touchpoint?"
+    options:
+      - "Last touch"
+      - "Media mix model"
+      - "First touch"
+      - "Lift study"
+    answer: 2
+    explanation: "E.g. the influencer post gets full credit even though the buyer later converted via search."
+
+  - id: q17
+    question: "You run ads in one city but not another and compare sales. Which model is this?"
+    options:
+      - "Incremental / lift"
+      - "Last touch"
+      - "Even multi-touch"
+      - "First touch"
+    answer: 0
+    explanation: "Lift studies compare outcomes with vs without the campaign."
+
+  - id: q18
+    question: "What is a media mix model (MMM)?"
+    options:
+      - "A last-touch model inside Google Ads"
+      - "A list of all channels"
+      - "A creative brief"
+      - "A statistical regression of historical changes in spend and sales"
+    answer: 3
+    explanation: "It needs a lot of historical data and is usually run quarterly or twice a year."
+
+  - id: q19
+    question: "Which is a recommendation for dealing with attribution?"
+    options:
+      - "Use only one model forever"
+      - "Track 2+ models consistently and compare changes over time, while looking at overall efficiency and P&L impact"
+      - "Trust each platform's self-reported numbers"
+      - "Ignore unassigned data"
+    answer: 1
+    explanation: "Also: keep the set-up simple, minimise unassigned data, stay fit for purpose."
+
+  - id: q20
+    question: "Bidding type and amount, targeting, and email cadence belong to which optimisation lever group?"
+    options:
+      - "Offer"
+      - "Sales ops"
+      - "Distribution & campaigns"
+      - "Creative & messaging"
+    answer: 2
+    explanation: "The six groups: creative & messaging, distribution & campaigns, data infrastructure, conversion & UX, offer, sales ops."

@@ -1,0 +1,53 @@
+# The 7 assessment elements. The first 6 are the prep boxes on the poster; marketing-roi is not on the poster.
+# id = URL slug of the summary page (/assessment/<id>/)
+- id: ideal-customer
+  number: 1
+  title: "Ideal customer & persona"
+  onPoster: true
+  from: "ICP · buyer persona"
+  prompt: "Name, segment, job to be done, decisive pain."
+  definition: "Who you're building for: the ICP (the type of account, for B2B) and the core buyer persona (the human), specific enough to be anchored in an acute pain someone would recognise."
+
+- id: positioning
+  number: 2
+  title: "Positioning in one sentence"
+  onPoster: true
+  from: "Brand strategy canvas"
+  prompt: "While … offer …, [target] choose [us] as … so they can …"
+  definition: "The value proposition template from lecture 2 as one sentence: the competitive space (what others offer, for whom) plus your core promise (who chooses you, for which problem, to get which benefit)."
+
+- id: journey
+  number: 3
+  title: "Journey: where value is won"
+  onPoster: true
+  from: "Customer journey design"
+  prompt: "Key touchpoint per stage; where do customers convert, where do they drop?"
+  definition: "The key touchpoint at each journey stage, how customers actually convert, and where the biggest drop-off risk sits."
+
+- id: differentiation
+  number: 4
+  title: "Differentiation"
+  onPoster: true
+  from: "Differentiation map"
+  prompt: "The two category tensions on which you differ from competitors."
+  definition: "The two category-specific sliders from your research where you sit clearly apart from competitors: your white space."
+
+- id: value-proposition
+  number: 5
+  title: "Value propositions"
+  onPoster: true
+  prompt: "Which job do we solve, for whom, better than the alternatives? (From your positioning statement.)"
+  definition: "The job you solve, for whom, and why you solve it better than what customers use today: the needs and gains you address and the properties that deliver them."
+
+- id: assumptions
+  number: 6
+  title: "Riskiest assumption"
+  onPoster: true
+  prompt: "If this is wrong, the model fails."
+  definition: "The single unproven belief your whole model depends on: what must be true for this to work but isn't validated yet."
+
+- id: marketing-roi
+  number: 7
+  title: "Marketing & ROI strategy"
+  onPoster: false
+  definition: "Evaluate 2–3 online marketing instruments for your value proposition, say which direction to pursue and why, and close with 'We will make money by…'."

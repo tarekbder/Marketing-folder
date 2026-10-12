@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { mdxComponents } from '../../components/mdx';
+import { sortedTopics, pad } from '../../lib/topics';
+
+export async function getStaticPaths() {
+  const topics = await sortedTopics();
+  return topics.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: { entry, prev: topics[i - 1] ?? null, next: topics[i + 1] ?? null },
+  }));
+}
+
+const { entry, prev, next } = Astro.props;
+const { Content, headings } = await render(entry);
+const toc = headings.filter((h) => h.depth === 2);
+const hasMcq = (await getCollection('mcq')).some((m) => m.id === entry.id);
+const hasCards = (await getCollection('flashcards')).some((f) => f.id === entry.id);
+---
+<Base title={entry.data.title} description={entry.data.takeaway}>
+  <header class="hero" slot="hero">
+    <div class="wrap">
+      <span class="tag">Unit {entry.data.unit} · {entry.data.unitName}</span><span class="tag pink">Lecture {pad(entry.data.order)}</span>
+      <h1>{entry.data.title}</h1>
+      <div class="takeaway"><b>Key takeaway</b>{entry.data.takeaway}</div>
+      {toc.length > 0 && (
+        <nav class="toc" aria-label="On this page">
+          {toc.map((h) => <a href={`#${h.slug}`}>{h.text}</a>)}
+        </nav>
+      )}
+    </div>
+  </header>
+
+  <article class="prose">
+    <Content components={mdxComponents} />
+  </article>
+
+  {(hasMcq || hasCards) && (
+    <section class="practice">
+      <h2>Practice this lecture</h2>
+      <div class="btnrow">
+        {hasMcq && <a class="btn" href={`/exercises/mcq/${entry.id}/`}>Multiple-choice quiz →</a>}
+        {hasCards && <a class="btn alt" href={`/exercises/flashcards/${entry.id}/`}>Flashcards →</a>}
+      </div>
+    </section>
+  )}
+
+  <nav class="pager" aria-label="Lectures">
+    {prev ? <a href={`/topics/${prev.id}/`}><small>← Lecture {pad(prev.data.order)}</small>{prev.data.title}</a> : <span></span>}
+    {next ? <a class="next" href={`/topics/${next.id}/`}><small>Lecture {pad(next.data.order)} →</small>{next.data.title}</a> : <span></span>}
+  </nav>
+</Base>

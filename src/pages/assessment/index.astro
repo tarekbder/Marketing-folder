@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import Poster from '../../components/Poster.astro';
+import { getEntry, render } from 'astro:content';
+import { mdxComponents } from '../../components/mdx';
+
+const entry = await getEntry('assessment', 'index');
+if (!entry) throw new Error('Missing src/content/assessment/index.mdx');
+const { Content, headings } = await render(entry);
+const toc = headings.filter((h) => h.depth === 2);
+---
+<Base title="Assessment">
+  <header class="hero" slot="hero">
+    <div class="wrap">
+      <span class="tag">Section 02</span><span class="tag pink">Mid-term · Part 1</span>
+      <h1>{entry.data.title}</h1>
+      <p class="lead">Tap a box on the poster for a short definition, then "More info" for everything the course says about it.</p>
+      <nav class="toc" aria-label="On this page">
+        <a href="#poster">The poster</a>
+        {toc.map((h) => <a href={`#${h.slug}`}>{h.text}</a>)}
+      </nav>
+    </div>
+  </header>
+
+  <h2 id="poster" style="margin-top:36px">The poster: your six prep boxes</h2>
+  <Poster />
+
+  <article class="prose">
+    <Content components={mdxComponents} />
+  </article>
+</Base>

@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { mdxComponents } from '../../components/mdx';
+
+export async function getStaticPaths() {
+  const pages = (await getCollection('assessment'))
+    .filter((p) => p.id !== 'index')
+    .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+  return pages.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: { entry, prev: pages[i - 1] ?? null, next: pages[i + 1] ?? null },
+  }));
+}
+const { entry, prev, next } = Astro.props;
+const { Content, headings } = await render(entry);
+const toc = headings.filter((h) => h.depth === 2);
+---
+<Base title={entry.data.title}>
+  <header class="hero" slot="hero">
+    <div class="wrap">
+      <a class="tag plain" href="/assessment/">← Assessment</a>
+      {entry.data.items && <span class="tag">Presentation item {entry.data.items}</span>}
+      {entry.data.criterion && <span class="tag pink">Rubric · {entry.data.criterion}</span>}
+      <h1>{entry.data.title}</h1>
+      {toc.length > 0 && (
+        <nav class="toc" aria-label="On this page">
+          {toc.map((h) => <a href={`#${h.slug}`}>{h.text}</a>)}
+        </nav>
+      )}
+    </div>
+  </header>
+
+  <article class="prose">
+    <Content components={mdxComponents} />
+  </article>
+
+  <nav class="pager" aria-label="Assessment topics">
+    {prev ? <a href={`/assessment/${prev.id}/`}><small>← Previous</small>{prev.data.title}</a> : <a href="/assessment/"><small>← Back</small>Assessment overview</a>}
+    {next ? <a class="next" href={`/assessment/${next.id}/`}><small>Next →</small>{next.data.title}</a> : <a class="next" href="/assessment/"><small>Back →</small>Assessment overview</a>}
+  </nav>
+</Base>

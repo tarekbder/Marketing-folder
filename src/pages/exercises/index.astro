@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { sortedTopics, pad } from '../../lib/topics';
+
+const topics = await sortedTopics();
+const mcq = await getCollection('mcq');
+const cards = await getCollection('flashcards');
+const rows = topics.map((t) => ({
+  t,
+  q: mcq.find((m) => m.id === t.id)?.data.questions.length ?? 0,
+  c: cards.find((f) => f.id === t.id)?.data.cards.length ?? 0,
+}));
+---
+<Base title="Exercises">
+  <header class="hero" slot="hero">
+    <div class="wrap">
+      <span class="tag">Section 03</span>
+      <h1>Exercises</h1>
+      <p class="lead">Multiple-choice quizzes with explanations and flashcard decks for every lecture. Progress is kept for this browser tab only.</p>
+    </div>
+  </header>
+
+  <div class="filters" role="group" aria-label="Filter by topic" data-filters>
+    <button type="button" data-filter="all" aria-pressed="true">All topics</button>
+    {topics.map((t) => <button type="button" data-filter={t.id} aria-pressed="false">{pad(t.data.order)}</button>)}
+  </div>
+
+  {rows.map(({ t, q, c }) => (
+    <div class="exrow" data-topic={t.id}>
+      <div>
+        <span class="cap">Lecture {pad(t.data.order)} · Unit {t.data.unit}</span>
+        <h3>{t.data.title}</h3>
+      </div>
+      <div class="btnrow">
+        {q > 0 && <a class="btn" href={`/exercises/mcq/${t.id}/`}>MCQ · {q}</a>}
+        {c > 0 && <a class="btn alt" href={`/exercises/flashcards/${t.id}/`}>Flashcards · {c}</a>}
+      </div>
+    </div>
+  ))}
+
+  <script>
+    const group = document.querySelector<HTMLElement>('[data-filters]');
+    const rows = document.querySelectorAll<HTMLElement>('.exrow');
+    group?.querySelectorAll<HTMLButtonElement>('button').forEach((btn) =>
+      btn.addEventListener('click', () => {
+        const f = btn.dataset.filter;
+        group.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        rows.forEach((r) => (r.hidden = f !== 'all' && r.dataset.topic !== f));
+      }),
+    );
+  </script>
+</Base>

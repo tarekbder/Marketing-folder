@@ -1,0 +1,14 @@
+---
+interface Props { highlight?: 'top' | 'bottom' }
+const { highlight } = Astro.props;
+const top = highlight === 'top' ? 'on' : highlight === 'bottom' ? 'off' : '';
+const bottom = highlight === 'bottom' ? 'on' : highlight === 'top' ? 'off' : '';
+---
+{!highlight && <p class="cap">The anchor framework: Brand Strategy Canvas</p>}
+<div class="canvas" role="img" aria-label={`Brand strategy canvas${highlight ? `, ${highlight} row highlighted` : ''}`}>
+  <div class={top}><b>Target group</b>Who is it for? Sub-groups? Who is it not for?</div>
+  <div class={top}><b>Key user / market findings</b>Research data points</div>
+  <div class={top}><b>Key insight(s)</b>Data translated into insight</div>
+  <div class:list={['pyr', bottom]}><b>Positioning pyramid</b>Properties → needs &amp; gains → topics → territory</div>
+  <div class={bottom}><b>Value proposition &amp; differentiation</b>Competitive space + core promise</div>
+</div>

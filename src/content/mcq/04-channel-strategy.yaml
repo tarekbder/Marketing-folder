@@ -1,0 +1,201 @@
+topic: 04-channel-strategy
+questions:
+  - id: q1
+    question: "You have €5,000 for marketing. What is the lecture's answer to 'where should you spend it?'"
+    options:
+      - "Always Google Ads first"
+      - "Split it evenly across every channel"
+      - "Always start with TV for credibility"
+      - "It depends: on business model, audience, journey, industry, positioning, ticket price and goals"
+    answer: 3
+    explanation: "There's no universal channel answer. Channel choice follows from the venture's context."
+
+  - id: q2
+    question: "What does 'the answer is not always a channel' mean?"
+    options:
+      - "Marketing doesn't work for startups"
+      - "Founder outreach, lead lists, events, partnerships or sales help can beat traditional marketing channels early on"
+      - "Only organic channels count"
+      - "You should never advertise"
+    answer: 1
+    explanation: "Early-stage ventures often get better ROI from direct, non-channel tactics."
+
+  - id: q3
+    question: "What is the main difference between paid search and paid social?"
+    options:
+      - "Search captures active intent; social builds reach with people who aren't searching (passive intent)"
+      - "Search is free; social is paid"
+      - "Social only works for B2B"
+      - "There is no difference"
+    answer: 0
+    explanation: "The two meet customers in different mindsets, so content and optimisation differ."
+
+  - id: q4
+    question: "Roughly how large should a paid test budget be, according to the lecture's rule of thumb?"
+    options:
+      - "Exactly €50, whatever the product"
+      - "10× the yearly marketing budget"
+      - "2–3× the product's ticket price"
+      - "Whatever is left at the end of the month"
+    answer: 2
+    explanation: "For a €50 product, about €200. Higher-priced products need larger tests to get a meaningful signal."
+
+  - id: q5
+    question: "Why is concentrating budget on few channels better than spreading it thinly when starting out?"
+    options:
+      - "Thin budgets stop algorithms from learning, add operational overhead and dilute impact"
+      - "Platforms ban small advertisers"
+      - "Spreading is illegal under GDPR"
+      - "Because SEO is always cheaper"
+    answer: 0
+    explanation: "Concentration was stressed repeatedly as a core principle."
+
+  - id: q6
+    question: "A brand-new venture has zero sales. What should its paid campaigns optimise for first?"
+    options:
+      - "Purchases, from day one"
+      - "Lifetime value"
+      - "Earlier funnel actions (clicks, landing page views, micro-conversions) that generate enough events"
+      - "Nothing: don't track anything yet"
+    answer: 2
+    explanation: "With no purchases there's not enough signal. Move the goal towards revenue as volume grows."
+
+  - id: q7
+    question: "Why install the Meta pixel and Google tag as soon as the website launches?"
+    options:
+      - "It's required by law"
+      - "So algorithms can observe behaviour and learn before you spend significant budget"
+      - "It makes the site load faster"
+      - "It replaces the need for a CRM"
+    answer: 1
+    explanation: "Feed the platforms data early."
+
+  - id: q8
+    question: "Which channel has the slowest time to first signal?"
+    options:
+      - "Paid search"
+      - "Paid social"
+      - "Email to existing subscribers"
+      - "Organic search (SEO): weeks to months"
+    answer: 3
+    explanation: "SEO compounds over time but needs long-term commitment."
+
+  - id: q9
+    question: "An influencer gets a unique voucher code and earns a share of each sale. Which payment model is this?"
+    options:
+      - "Fixed fee"
+      - "CPM"
+      - "Revenue share / commission"
+      - "Barter"
+    answer: 2
+    explanation: "Other models: fixed fees, CPM (per thousand impressions) and barter (free product or gifts)."
+
+  - id: q10
+    question: "According to the cheatsheet, which platform is 'knowledge & search' with medium–high production value and high trust for higher-ticket products?"
+    options:
+      - "YouTube"
+      - "TikTok"
+      - "Facebook"
+      - "Pinterest"
+    answer: 0
+    explanation: "YouTube has a high compounding effect but needs more planning and production."
+
+  - id: q11
+    question: "On LinkedIn, what tends to work better than company page posts?"
+    options:
+      - "Paid banner ads only"
+      - "Reposting Instagram stories"
+      - "Hashtag campaigns"
+      - "Employee content, plus using LinkedIn as a searchable ICP directory"
+    answer: 3
+    explanation: "LinkedIn is network & knowledge, highly relevant for B2B."
+
+  - id: q12
+    question: "Why align paid, organic and influencer activity on the same social platform?"
+    options:
+      - "Platforms give discounts for it"
+      - "Users see ads, posts and creator content in one place, creating omnipresence and growing one audience"
+      - "It's cheaper to buy one platform's ads"
+      - "Other platforms block cross-posting"
+    answer: 1
+    explanation: "Influencer followers may follow your brand account too, compounding within one ecosystem."
+
+  - id: q13
+    question: "Reviews sites and launchpads like Product Hunt are marked with an asterisk on the cheatsheet. Why?"
+    options:
+      - "They're the most expensive channels"
+      - "They're not standalone distribution sources; they're mainly used for SEO/GEO or as campaign anchors"
+      - "They only work in the US"
+      - "They are deprecated"
+    answer: 1
+    explanation: "They support other channels rather than driving distribution on their own."
+
+  - id: q14
+    question: "What does treating your brand as an 'entity' mean?"
+    options:
+      - "Registering the company as a legal entity"
+      - "Having one social account only"
+      - "Building multiple consistent references (citations, reviews, links, structured data, profiles) so search and AI systems recognise and recommend you"
+      - "Hiring an agency"
+    answer: 2
+    explanation: "Google and generative AI look for many references to build a complete picture of your brand."
+
+  - id: q15
+    question: "In the N26 case, what were 'long-tail transactional keywords' like 'free business bank account for self-employed' good for?"
+    options:
+      - "Specific phrases with lower competition and high conversion intent"
+      - "Building brand awareness among people with no intent"
+      - "Lowering the price of Google Ads"
+      - "Getting into TV programming"
+    answer: 0
+    explanation: "N26 combined these with informational content on adjacent topics where it has authority."
+
+  - id: q16
+    question: "Which is a myth according to the lecture?"
+    options:
+      - "Consistency is a key signal on most platforms"
+      - "Most content is created around one anchor and repurposed"
+      - "Smaller teams should master a few channels"
+      - "If the content is great, people will naturally find and share it"
+    answer: 3
+    explanation: "Very few posts explode organically; content needs planning, deliberate distribution and analysis."
+
+  - id: q17
+    question: "What are the four parts of a content engine?"
+    options:
+      - "Planning, production, distribution, analysis"
+      - "Ideas, budget, approvals, launch"
+      - "SEO, ads, email, PR"
+      - "Awareness, interest, desire, action"
+    answer: 0
+    explanation: "A content engine is a systematic, repeatable operation to ideate, produce, distribute and measure content at scale."
+
+  - id: q18
+    question: "What is an anchor asset?"
+    options:
+      - "The company logo"
+      - "A hero content piece (e.g. whitepaper, video, mini-course) that gets repurposed across key channels"
+      - "The first ad a brand ever runs"
+      - "A paid placement at the top of search results"
+    answer: 1
+    explanation: "Especially for small teams: one valuable piece, adapted per channel, optionally used as a journey gate."
+
+  - id: q19
+    question: "In a pillar–cluster SEO structure, what do the cluster articles do?"
+    options:
+      - "Replace the pillar article"
+      - "Target paid keywords only"
+      - "Duplicate the pillar word for word"
+      - "Cover specific subtopics and link back to the broad pillar article"
+    answer: 3
+    explanation: "One pillar covers the broad topic; clusters go deeper on subtopics and strengthen the pillar."
+
+  - id: q20
+    question: "Two D2C brands with the same industry, product type and price point: what does the lecture say about their channel mix?"
+    options:
+      - "It must be identical"
+      - "Both should start on TV"
+      - "They may need completely different channels; there are no universal if-then rules, so test"
+      - "Both should avoid Meta"
+    answer: 2
+    explanation: "One brand may scale on Meta while a near-identical one wins on Google or influencers."

@@ -1,0 +1,29 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Mcq from '../../../components/Mcq.astro';
+import { getCollection } from 'astro:content';
+import { sortedTopics, pad } from '../../../lib/topics';
+
+export async function getStaticPaths() {
+  const sets = await getCollection('mcq');
+  const topics = await sortedTopics();
+  return sets.map((set) => ({ params: { topic: set.id }, props: { set, topic: topics.find((t) => t.id === set.id) ?? null } }));
+}
+const { set, topic } = Astro.props;
+const title = topic?.data.title ?? set.id;
+---
+<Base title={`MCQ · ${title}`}>
+  <header class="hero" slot="hero">
+    <div class="wrap">
+      <span class="tag">Multiple choice</span>{topic && <span class="tag pink">Lecture {pad(topic.data.order)}</span>}
+      <h1>{title}</h1>
+      <p class="lead">{set.data.questions.length} questions. Answer options are shuffled every time; the explanation appears after each answer.</p>
+    </div>
+  </header>
+  <Mcq topic={set.id} questions={set.data.questions} />
+  <div class="btnrow">
+    {topic && <a class="btn alt" href={`/topics/${topic.id}/`}>← Read the explainer</a>}
+    <a class="btn alt" href={`/exercises/flashcards/${set.id}/`}>Flashcards for this lecture</a>
+    <a class="btn alt" href="/exercises/">All exercises</a>
+  </div>
+</Base>

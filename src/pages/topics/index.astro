@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import { sortedTopics, units, pad } from '../../lib/topics';
+const topics = await sortedTopics();
+const unitNums = [...new Set(topics.map((t) => t.data.unit))].sort();
+---
+<Base title="Topics">
+  <header class="hero" slot="hero">
+    <div class="wrap">
+      <span class="tag">Section 01</span>
+      <h1>Topic explainers</h1>
+      <p class="lead">One page per lecture: concept → framework → example → exercise, then the key terms.</p>
+    </div>
+  </header>
+  {unitNums.map((u) => (
+    <section>
+      <div class="unit-head">
+        <span class="tag pink">Unit {u}</span>
+        <h2>{units[u] ?? topics.find((t) => t.data.unit === u)?.data.unitName}</h2>
+      </div>
+      <div class="tlist">
+        {topics.filter((t) => t.data.unit === u).map((t) => (
+          <a class="tcard" href={`/topics/${t.id}/`}>
+            <span class="n">Lecture {pad(t.data.order)}</span>
+            <h3>{t.data.title}</h3>
+            <p>{t.data.takeaway}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+</Base>

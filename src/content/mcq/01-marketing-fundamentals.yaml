@@ -1,0 +1,201 @@
+topic: 01-marketing-fundamentals
+questions:
+  - id: q1
+    question: "According to the lecture, what is marketing fundamentally about?"
+    options:
+      - "Making products look shiny and inspirational"
+      - "Building the systematic bridge that puts great products in the hands of people who benefit from them"
+      - "Buying as much ad inventory as the budget allows"
+      - "Designing the logo and visual identity"
+    answer: 1
+    explanation: "The opening slide contrasts shiny, inspirational marketing (the Fyre Festival story) with marketing as a systematic bridge between a great product and the people who benefit from it."
+
+  - id: q2
+    question: "What is the 'bottom line' of marketing as framed in the lecture?"
+    options:
+      - "Maximise brand awareness at any cost"
+      - "Win design awards"
+      - "Spend the full budget every quarter"
+      - "Get as many customers as possible, as cheaply as possible, and retain them as long as you can"
+    answer: 3
+    explanation: "Acquire many, acquire cheaply, retain long. 'Customers' can be swapped for users, donors or participants depending on the venture."
+
+  - id: q3
+    question: "Which question does the 'Place' P answer?"
+    options:
+      - "Where? (online vs offline, DTC vs marketplace, logistics)"
+      - "How much?"
+      - "How do customers arrive?"
+      - "Who?"
+    answer: 0
+    explanation: "Price = how much, Product = what, Place = where, Promotion = how customers arrive, People = who."
+
+  - id: q4
+    question: "In the 4Ps + P framework, what does the extra 'People' P cover?"
+    options:
+      - "Only the target customers"
+      - "Only the founding team"
+      - "Customers and team"
+      - "Investors and board members"
+    answer: 2
+    explanation: "People covers both the target audience and the team. For solo founders it also raises the in-house vs outsourced question."
+
+  - id: q5
+    question: "Which of these is NOT one of the three uses of the 4Ps + P framework named in the lecture?"
+    options:
+      - "Fleshing out an idea early on"
+      - "High-level alignment with co-founders, investors or team"
+      - "Calculating the exact customer lifetime value"
+      - "Planning a detailed strategy"
+    answer: 2
+    explanation: "The framework is for quick idea checks, alignment and detailed planning. It isn't a calculation tool."
+
+  - id: q6
+    question: "In the name-sticker example for children, why map the 'decision-maker vs payer' separately?"
+    options:
+      - "Because parents pay and trigger the purchase, but the child is a sub-customer whose dislike can kill the sale"
+      - "Because children pay with pocket money"
+      - "Because schools buy the stickers in bulk"
+      - "Because the payer is always the end user"
+    answer: 0
+    explanation: "The parents pay; the child uses. If the kid doesn't like the product, the parents won't buy again. In B2B you likewise map decision maker and contact separately."
+
+  - id: q7
+    question: "What is the trade-off of selling through a marketplace instead of DTC, according to the lecture?"
+    options:
+      - "Marketplaces are free but slower"
+      - "Marketplaces only work for luxury goods"
+      - "DTC always has higher fees"
+      - "Marketplaces take roughly 15–30% and suit some price points; DTC is cheapest but you must drive the traffic yourself"
+    answer: 3
+    explanation: "DTC keeps the margin but puts traffic generation on you. Marketplaces bring traffic for a 15–30% cut and don't suit luxury positioning."
+
+  - id: q8
+    question: "In the Fitbit Air teardown, what happens if the price rises from €99 to €350?"
+    options:
+      - "Nothing changes; price doesn't affect positioning"
+      - "The audience narrows, features must justify the price, and the hardware-plus-subscription model weakens"
+      - "The audience widens because it signals quality"
+      - "The subscription becomes more attractive"
+    answer: 1
+    explanation: "Price is tied to every other P: a higher price narrows the audience and puts pressure on the product and the business model."
+
+  - id: q9
+    question: "What does 'time to value' describe?"
+    options:
+      - "When the customer accesses the core value of the product"
+      - "How long the marketing team takes to launch a campaign"
+      - "The time between two purchases"
+      - "How long a product stays on the market"
+    answer: 0
+    explanation: "Whether core value comes now (at payment) or later (after free teaser value) shapes how the 4Ps + People fit together."
+
+  - id: q10
+    question: "A product gives teaser value for free first, and full value is accessed at payment. Which model is this?"
+    options:
+      - "Purchase-based (value now)"
+      - "Marketplace-based"
+      - "Lead-based (value later)"
+      - "Referral-based"
+    answer: 2
+    explanation: "Value later = lead-based: typical for enterprise B2B, high-ticket services, complex products and apps."
+
+  - id: q11
+    question: "What is marketing's main job in a lead-based flow?"
+    options:
+      - "Reduce checkout friction"
+      - "Deliver qualified leads and nurture them to readiness"
+      - "Maximise add-to-cart rate"
+      - "Run flash sales"
+    answer: 1
+    explanation: "Lead-based journeys are long and high-touch, so marketing qualifies and nurtures. In purchase flows, marketing delivers intent-ful prospects and reduces cognitive friction."
+
+  - id: q12
+    question: "Which KPI belongs mainly to a purchase-based (e-commerce) flow rather than a lead-based one?"
+    options:
+      - "Cost per lead (CPL)"
+      - "Lead-to-opportunity rate"
+      - "Lead-to-sale time"
+      - "Checkout completion rate"
+    answer: 3
+    explanation: "Add-to-cart rate, checkout completion rate and AOV are purchase KPIs. CPL, lead-to-opportunity rate and lead-to-sale time are lead KPIs."
+
+  - id: q13
+    question: "Why was SumUp sorted as 'value now'?"
+    options:
+      - "Because it only sells to enterprises"
+      - "Because it gives a free trial for a year"
+      - "Because it uses a long sales cycle"
+      - "Because customers can use it the same day; devices are sold below cost and recouped through transaction fees"
+    answer: 3
+    explanation: "Same-day use makes it value now; the business model recovers the hardware subsidy through transaction fees."
+
+  - id: q14
+    question: "Why was Duolingo sorted as 'value later' in the quick-sort exercise?"
+    options:
+      - "Free-to-play apps are lead-based: non-payers must be kept engaged until they convert"
+      - "It's an enterprise B2B product"
+      - "It charges before you can use the app"
+      - "It only sells physical products"
+    answer: 0
+    explanation: "Free users are effectively leads; the product team's job is to keep them engaged until they pay."
+
+  - id: q15
+    question: "In the linear funnel, which AARRR stage matches the 'Purchase' stage of the marketing funnel?"
+    options:
+      - "Acquisition"
+      - "Activation"
+      - "Revenue"
+      - "Referral"
+    answer: 2
+    explanation: "Awareness/interest map to acquisition, consideration/intent to activation, purchase to revenue, loyalty to retention and referral."
+
+  - id: q16
+    question: "What is 'Problem 1' with the linear funnel?"
+    options:
+      - "People are complex, not linear: they forget, search again and compare"
+      - "It has too few stages"
+      - "It ignores pricing"
+      - "It only works for B2B"
+    answer: 0
+    explanation: "Real paths loop back and forth, so you continuously serve four needs: discover the solution, experience the brand, gain knowledge, solve the challenge."
+
+  - id: q17
+    question: "What does the 'leaking bucket' problem refer to?"
+    options:
+      - "Customers who leave bad reviews"
+      - "Data lost between tracking tools"
+      - "Paid acquisition: stop putting money in and revenue stops; high retention can mask a shrinking top of funnel"
+      - "Employees leaving the marketing team"
+    answer: 2
+    explanation: "'Money in to get money out' is Problem 2. Growth loops are one way to reduce dependence on paid spend."
+
+  - id: q18
+    question: "Which statement best defines a growth loop?"
+    options:
+      - "A paid campaign that runs on a loop"
+      - "A monthly reporting cycle"
+      - "A discount that repeats every season"
+      - "A self-reinforcing, mostly automated system that attracts new customers with minimal investment"
+    answer: 3
+    explanation: "Growth loops balance effort, cost and risk, though they rarely run a business on their own."
+
+  - id: q19
+    question: "Zoom, Calendly and DocuSign are examples of which growth loop?"
+    options:
+      - "Marketplace"
+      - "Utility: for the product to work, users invite others"
+      - "Social status"
+      - "Content"
+    answer: 1
+    explanation: "You can't use a meeting or signing tool alone: using it pulls other people in."
+
+  - id: q20
+    question: "Airbnb, Etsy and Vinted are examples of which growth loop?"
+    options:
+      - "Referral"
+      - "Marketplace: more suppliers attract more customers, which attract more suppliers"
+      - "Utility"
+      - "Content"
+    answer: 1
+    explanation: "Two-sided supply and demand reinforce each other."

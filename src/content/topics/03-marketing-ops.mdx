@@ -1,0 +1,206 @@
+---
+title: Marketing ops and applied AI workflows
+order: 3
+unit: 1
+unitName: Marketing Foundations
+slug: 03-marketing-ops
+takeaway: Evaluate modern marketing tech stacks and workflows, leveraging human-in-the-loop AI to build scalable automations.
+---
+
+<p class="cap">The anchor framework: the six-layer marketing stack</p>
+
+<Layers
+  top="Customer-facing"
+  bottom="Backend"
+  items={[
+    { name: "Distribution & acquisition", desc: "Ad platforms, social, search, email" },
+    { name: "Experience & transaction", desc: "Shopfront, landing pages, lead forms, A/B testing" },
+    { name: "Production & enablement", desc: "Creative production, copywriting, CMS" },
+    { name: "Productivity & orchestration", desc: "Project management, no-code automation" },
+    { name: "Tracking & analytics", desc: "Google Analytics, BI dashboards, GTM & pixels" },
+    { name: "Data management", desc: "Data warehouse (DWH), purchase logs, CRM/CDP" }
+  ]}
+/>
+
+## 1. The marketing stack
+
+### The trap that is marketing ops
+How many marketing tools does a growth-phase company (about €25–50M yearly revenue) use? Far more than most people guess.
+
+<Grid cols="3">
+  <Card title="15,505" kicker="Martech vendors" tone="purple">Available on the market (State of MarTech 2026).</Card>
+  <Card title="18–40" kicker="Tools used">By a typical organisation (State of MarTech 2022).</Card>
+  <Card title="33%" kicker="Capabilities used" tone="pink">Of what companies pay for (Gartner, via Martech.org).</Card>
+</Grid>
+
+### Before the stack: a target audience check
+The session opened with red-teaming each other's brand strategy canvases. Two lessons carried over:
+- Real brand strategy work uses far more research than the classroom version: typically 60–80+ distinct data points, not 4–5.
+- A target audience must be specific enough that both the team and potential customers immediately recognise the fit. "A product for adults" says nothing; "for adults who lecture at a university" is instantly relatable. Use a **primary audience** plus **sub-audiences** for tailoring sales, ads and content. How big the group must be depends on ambition: venture-scale startups need larger addressable markets than side projects.
+
+### Considerations when building a stack
+- Match the stack to the **business context and stage**
+- **Naming conventions** for assets, campaigns, reports and UTMs
+- The **minimum required process**: don't over-engineer
+- **Fit-for-purpose** use of AI
+- Plan for both the **short term** (weeks to months) and the **long run** (a year)
+- **Decentralise** when possible to allow parallel work; centralise where compliance or governance requires it
+
+### Risks of a badly managed stack
+- Resource drain (money, time)
+- Attention and focus (maintenance, clean-up, reporting)
+- Website loading times and UX: tracking tools slow pages down and cost conversions
+- Data noise and misalignment: **no single source of truth**
+- Slow execution (confusion, governance, inefficiency)
+- Bad decision-making
+
+### The six layers
+Read the stack from backend to customer-facing:
+
+| # | Layer | What it does | Examples |
+|---|---|---|---|
+| 1 | **Data management** | Captures and organises raw customer data | Data warehouse, purchase logs, CRM, CDP |
+| 2 | **Tracking & analytics** | Collects and visualises performance data | Google Analytics, BI dashboards, GTM, pixels |
+| 3 | **Productivity & orchestration** | Keeps workflows running efficiently | Asana, Jira, Make, Zapier |
+| 4 | **Production & enablement** | Creates content and documentation | CMS (WordPress, Shopify backend), copywriting tools, sales materials |
+| 5 | **Experience & transaction** | Where customers interact | Shop, landing pages, lead forms, A/B testing |
+| 6 | **Distribution & acquisition** | Delivers content and attracts customers | Ad platforms, social, search, email |
+
+Three tools worth knowing:
+- **Google Tag Manager (GTM):** a container code on the website that lets marketers add tracking pixels without a developer for every new tool.
+- **UTM parameters:** URL query strings (`utm_source`, `utm_campaign`…) that connect clicks and conversions back to a marketing source.
+- **Product feeds:** structured files listing every product's metadata (price, images, attributes) that power dynamic and carousel ads on Google, Meta and others.
+
+**APIs** let platforms talk to each other: when a shop sends you to PayPal at checkout, the two communicate via an API.
+
+### Real stacks
+<Grid cols="2">
+  <Card title="B2C lead gen: ~30 tools" kicker="Ed-tech company">HubSpot CRM, the Google Analytics suite, WordPress, SEO tools (Ahrefs, Screaming Frog), email marketing, project management.</Card>
+  <Card title="E-commerce: ~48 tools" kicker="Similar company size" tone="purple">Far more tools because of the Shopify app ecosystem: shop optimisation plugins, loyalty, product feed management, several analytics layers.</Card>
+</Grid>
+
+Backend data tools are often run by specialists; a CMO may not touch the lowest layer day to day.
+
+### The attribution problem
+Ad platforms like Meta and Google Ads both claim credit for the same conversion because they use different attribution windows and models. One company added up all Google Ads revenue and all Meta Ads revenue and got **more revenue than the company was actually making**. There's no perfect fix: run experiments, build a custom attribution model, or consolidate data in a neutral tool (like Google Analytics) as your own source of truth. Lecture 6 goes deeper.
+
+## 2. AI workflows in marketing
+
+### Not everything needs AI
+
+<Grid cols="3">
+  <Card title="Deterministic & predefined" kicker="→ Automation">Clear A → B → C rules. *Send a Slack message when a new lead signs up.* No AI needed.</Card>
+  <Card title="Mostly deterministic" kicker="→ Automation + AI" tone="purple">Known steps, but content or data needs enriching. *Enrich and score new leads using Claude.*</Card>
+  <Card title="Probabilistic & agentic" kicker="→ AI agent" tone="pink">The trigger is known, but the best path varies. *An agent scans public customer data, spots company changes, adjusts account priority and alerts the team with context.*</Card>
+</Grid>
+
+### Human in the loop
+
+<Layers
+  items={[
+    { name: "Fully human", desc: "No AI involved" },
+    { name: "Human produced, AI enhanced", desc: "A person creates; AI polishes" },
+    { name: "Human & AI co-produced", desc: "Both contribute along the way" },
+    { name: "Human triggered, AI produced", desc: "A person starts it; AI does the work" },
+    { name: "Autonomous AI", desc: "AI decides if, when and how to act" }
+  ]}
+/>
+
+<Callout>
+AI is your very capable intern. The critical point for a human is **before anything customer-facing goes out**.
+</Callout>
+
+- **Transactional emails** (cart abandonment, confirmations): a human writes the template once, automation sends it.
+- **Marketing content** (newsletters, social posts): a human reviews AI drafts before publishing.
+- **Campaign optimisation:** a human approves new campaign variations before launch.
+
+### AI use cases in marketing
+Three reasons to use AI: **reduce effort**, **increase value** (better quality) and **unlock new capabilities** (for example launching a fully branded e-commerce shop in a day with AI-generated visuals).
+
+<Chips items={["Keyword research & SEO QA", "Ideation (content, experiments, ads)", "Content creation & content flywheels", "Ad assets (hooks, angles, visuals)", "Lead enrichment & scoring", "Insights from calls, events, reviews", "Communication compliance", "Creating or editing LPs and frontend", "Forecasting & dashboards", "Ad campaign & budget optimisation", "Competitive analysis"]} />
+
+<Callout tone="warn" title="Watch out">
+Don't overdo it or over-engineer it too soon.
+</Callout>
+
+**In practice:** an automated email campaign ran three AI agents in sequence: a *product expert* picked relevant products for the campaign topic, a *copywriter* drafted the email, and a *compliance manager* checked health claims. A human triggered it with a Slack message naming the topic and approved the final draft before sending.
+
+<Exercise title="AI workflows quiz">
+For each scenario: (1) which workflow would you use: automation, AI + automation, or agentic? (2) Where would you put a human in the loop?
+
+1. A customer adds items to the cart, then leaves the shop. You want to send a reminder so they come back and buy.
+2. You lost the expert copywriter who wrote all your newsletters, email campaigns and social posts, and you don't want to compromise on quantity or quality.
+3. A new B2B lead signs up. You want to enrich it with company details (headcount, key decision makers, funding rounds) to gauge relevance.
+4. You want a system that analyses ad performance, suggests optimisations and creates new ads based on competitor activity and seasonality, before campaigns decline.
+</Exercise>
+
+<details>
+<summary>Suggested answers (based on the lecture's examples)</summary>
+
+1. **Automation.** A clear rule-based trigger. A human writes the reminder template once; automation sends it.
+2. **AI + automation.** AI drafts the content within a defined process; a human reviews every draft before it's published.
+3. **AI + automation.** The steps are known (trigger → enrich → score); AI adds the enrichment. The lecture uses this exact case as its "mostly deterministic" example.
+4. **Agentic.** The path varies with performance, competition and season. A human approves new campaign variations before launch.
+</details>
+
+Recommended practice: sign up for a free Make or Zapier account and build a small no-code automation.
+
+## 3. Evaluating a stack
+
+### By maturity
+
+| | Validation | Early scale | Growth | Enterprise |
+|---|---|---|---|---|
+| **Revenue** | Under €500k | €1M–€5M | €10M–€50M | High volume / public |
+| **Tools** | ~5–10 | ~10–25 | ~20–40 | 50+ |
+| **Typical set-up** | Lightweight LP, basic CRM, GTM + GA4, website/shop, 1–2 socials | Full CMS + apps, full-feature CRM, automations, robust reporting | CDP, robust DWH architecture, BI, advanced attribution, multi-language, ERP integrations | Complex enterprise suites, governance, robust attribution models, localised instances |
+
+<Callout>
+This is **not** a prescription. Use it as a general reference. D2C e-commerce usually needs more tools than B2B lead gen.
+</Callout>
+
+Early-stage founders often don't need a full CRM: a Google spreadsheet can track the first 10–50 customers until automation and sequencing become necessary.
+
+### By value added
+Plot each tool by value and effort, then act on its zone:
+
+<ZoneMatrix />
+
+Think in "direction of travel": can automation or AI move a high-effort tool towards lower effort while keeping its value?
+
+### Questions to ask about every tool
+- **Is it a duplicate?** (two A/B testing tools, several BI platforms)
+- **Can it be automated?**
+- **Is it actually used?** Remember: two-thirds of paid capabilities go unused.
+- **Which tool breaking would freeze the business?** Usually the CRM for lead-based companies and the CMS/shop platform for e-commerce.
+
+## 4. A few words on GDPR
+
+GDPR (in German: DSGVO) applies to early-stage ventures too. Fines come in two tiers:
+
+| Tier | Maximum fine |
+|---|---|
+| Lower | Up to €10 million or 2% of total annual revenue |
+| Higher | Up to €20 million or 4% of total annual revenue |
+| Non-financial | Processing bans, data deletion, etc. |
+
+From day one:
+- **Active consent**: checkboxes, double opt-in (DOI), cookie consent, unsubscribe
+- **Right to be forgotten**: a deletion process, automation and logs
+- **Avoid manual access** to customer data: no downloading or sharing files of personal data
+
+## Key terms
+- **Martech stack**: the set of tools a company uses for marketing, organised in six layers
+- **CRM**: customer relationship management system
+- **CDP**: customer data platform
+- **DWH**: data warehouse
+- **GTM (Google Tag Manager)**: a container on the site that lets marketers add tracking pixels without a developer
+- **UTM parameters**: URL tags that attribute traffic to a source, medium and campaign
+- **Product feed**: a structured product file that powers dynamic ads
+- **Single source of truth**: one agreed place where performance data is decided
+- **Deterministic workflow**: a predefined rule-based process; needs automation, not AI
+- **Agentic workflow**: AI decides if, when and how to act
+- **Human in the loop (HITL)**: a person reviews or approves at a defined step, especially before customer-facing actions
+- **Waste / core / question / target zone**: the four value-vs-effort zones for evaluating tools
+- **GDPR / DSGVO**: the EU data protection regulation
+- **Double opt-in (DOI)**: a sign-up confirmed twice, usually via an email link

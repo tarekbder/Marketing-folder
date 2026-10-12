@@ -1,0 +1,18 @@
+---
+const rows = [
+  { name: 'Target audience', a: 'Specialized', b: 'Universal' },
+  { name: 'Product scope', a: 'Core', b: 'All-in-one' },
+  { name: 'Authority source', a: 'Institutional', b: 'Relatable' },
+  { name: 'Perceived value', a: 'Accessible', b: 'Premium' },
+  { name: 'Category tension 1 (e.g.)', a: 'Discreet', b: 'Statement piece', cat: true },
+  { name: 'Category tension 2 (e.g.)', a: 'Distraction-free', b: 'Engagement-rich', cat: true },
+];
+---
+<div class="sliders">
+  {rows.map((r) => (
+    <div class:list={['srow', r.cat && 'cat']}>
+      <div class="name">{r.name}</div>
+      <div class="strack"><span>{r.a}</span><div class="line"></div><span>{r.b}</span></div>
+    </div>
+  ))}
+</div>

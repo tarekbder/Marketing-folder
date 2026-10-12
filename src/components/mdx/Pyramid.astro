@@ -1,0 +1,47 @@
+---
+interface Props { example?: 'fitbit-air' }
+const { example } = Astro.props;
+const floors = [
+  { cls: 'l1', name: 'Brand territory', def: "The conceptual space we occupy in customers' minds (internal phrasing). 2–3 words. It fails if a competitor's name could be swapped in." },
+  { cls: 'l2', name: 'Brand topics', def: 'Core themes/expertise we consistently communicate to match customer priorities. 3–4 repeatable pillars with enough content depth; 5–7 is too many.' },
+  { cls: 'l3', name: 'Customer needs & gains', def: "The customer's internal problem space (needs) and desired outcomes (gains)." },
+  { cls: 'l4', name: 'Key product properties', def: "Features, specs and capabilities that deliver on the customer's needs and gains." },
+];
+const fitbit = [
+  { cls: 'l1', label: 'Territory', text: 'The distraction-free health companion' },
+  { cls: 'l2', label: 'Topics', text: 'Mental well-being · (active) lifestyle · healthy fitness habits' },
+  { cls: 'l3', label: 'Needs & gains', text: "Smartwatches disturb my focus · too bulky to sleep with / I want it stylish · I don't know what to do when metrics are off / I want expert advice" },
+  { cls: 'l4', label: 'Properties', text: 'Screenless, long battery, no sound · ultra-thin, interchangeable bands · Google Health app with AI coach' },
+];
+const intro = 'Read it bottom-up: properties deliver on needs and gains, which feed the topics, which add up to the territory.';
+---
+{example === 'fitbit-air' ? (
+  <div class="card pink">
+    <span class="card-kicker">Example · Fitbit Air</span>
+    <div class="pyramid ex">
+      {fitbit.map((f) => <div class={`lvl ${f.cls}`}><small>{f.label}</small>{f.text}</div>)}
+    </div>
+  </div>
+) : (
+  <div>
+    <p class="cap">Tap a floor for its definition</p>
+    <div class="pyramid" data-pyramid data-intro={intro}>
+      {floors.map((f) => <button type="button" class={`lvl ${f.cls}`} data-def={f.def} aria-pressed="false">{f.name}</button>)}
+      <div class="pyr-def" data-pyr-def aria-live="polite">{intro}</div>
+    </div>
+  </div>
+)}
+<script>
+  document.querySelectorAll<HTMLElement>('[data-pyramid]').forEach((pyr) => {
+    const out = pyr.querySelector<HTMLElement>('[data-pyr-def]');
+    const btns = pyr.querySelectorAll<HTMLButtonElement>('button.lvl');
+    btns.forEach((b) =>
+      b.addEventListener('click', () => {
+        const wasOn = b.getAttribute('aria-pressed') === 'true';
+        btns.forEach((x) => x.setAttribute('aria-pressed', 'false'));
+        if (out) out.textContent = wasOn ? pyr.dataset.intro || '' : b.dataset.def || '';
+        if (!wasOn) b.setAttribute('aria-pressed', 'true');
+      }),
+    );
+  });
+</script>

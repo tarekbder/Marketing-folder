@@ -1,0 +1,10 @@
+---
+interface Layer { name: string; desc: string }
+interface Props { items: Layer[]; top?: string; bottom?: string }
+const { items, top, bottom } = Astro.props;
+---
+<div class="layers">
+  {top && <span class="end">↑ {top}</span>}
+  {items.map((l) => <div class="layer"><b>{l.name}</b><span>{l.desc}</span></div>)}
+  {bottom && <span class="end">↓ {bottom}</span>}
+</div>

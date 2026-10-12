@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+
+const elements = await getCollection('elements');
+const byId = (id: string) => {
+  const e = elements.find((x) => x.id === id);
+  if (!e) throw new Error(`Missing assessment element: ${id}`);
+  return { id, ...e.data };
+};
+const column01 = ['ideal-customer', 'positioning', 'journey', 'differentiation'].map(byId);
+const valueProp = byId('value-proposition');
+const risk = byId('assumptions');
+type El = ReturnType<typeof byId>;
+---
+<div class="poster" data-poster>
+  <div class="poster-col">
+    <p class="poster-head">01 · From digital marketing</p>
+    {column01.map((el: El) => (
+      <div class="pbox" data-pbox>
+        <button type="button" class="pbox-btn" aria-expanded="false" aria-controls={`pop-${el.id}`}>
+          <span class="pbox-num">{el.number}</span><span class="pbox-title">{el.title}</span>
+          {el.from && <span class="pbox-from">From: {el.from}</span>}
+          {el.prompt && <span class="pbox-prompt">{el.prompt}</span>}
+        </button>
+        <div class="pop" id={`pop-${el.id}`} hidden>
+          <p>{el.definition}</p>
+          <a class="btn" href={`/assessment/${el.id}/`}>More info →</a>
+        </div>
+      </div>
+    ))}
+    <div class="pbox" data-pbox>
+      <button type="button" class="pbox-btn" aria-expanded="false" aria-controls={`pop-${risk.id}`}>
+        <span class="pbox-num">{risk.number}</span><span class="pbox-title">{risk.title}</span>
+        {risk.prompt && <span class="pbox-prompt">{risk.prompt}</span>}
+      </button>
+      <div class="pop" id={`pop-${risk.id}`} hidden>
+        <p>{risk.definition}</p>
+        <a class="btn" href={`/assessment/${risk.id}/`}>More info →</a>
+      </div>
+    </div>
+  </div>
+  <div class="poster-col">
+    <p class="poster-head">02 · Business model canvas</p>
+    <div class="poster-bmc">
+      <div class="pbox vp-box" data-pbox>
+        <button type="button" class="pbox-btn" aria-expanded="false" aria-controls={`pop-${valueProp.id}`}>
+          <span class="pbox-num">{valueProp.number}</span><span class="pbox-title">{valueProp.title}</span>
+          {valueProp.prompt && <span class="pbox-prompt">{valueProp.prompt}</span>}
+        </button>
+        <div class="pop" id={`pop-${valueProp.id}`} hidden>
+          <p>{valueProp.definition}</p>
+          <a class="btn" href={`/assessment/${valueProp.id}/`}>More info →</a>
+        </div>
+      </div>
+      <p class="cap">The other canvas blocks stay empty for now: they are filled in the business models part.</p>
+    </div>
+  </div>
+</div>
+<p class="poster-note">
+  Mark every entry: <span class="epa e">E</span> evidence · <span class="epa p">P</span> plausible · <span class="epa a">A</span> assumption
+</p>
+
+<script>
+  const poster = document.querySelector<HTMLElement>('[data-poster]');
+  if (poster) {
+    const boxes = Array.from(poster.querySelectorAll<HTMLElement>('[data-pbox]'));
+    const close = (except?: HTMLElement) =>
+      boxes.forEach((b) => {
+        if (b === except) return;
+        b.querySelector('.pbox-btn')?.setAttribute('aria-expanded', 'false');
+        b.querySelector<HTMLElement>('.pop')?.setAttribute('hidden', '');
+      });
+    boxes.forEach((box) => {
+      const btn = box.querySelector<HTMLButtonElement>('.pbox-btn')!;
+      const pop = box.querySelector<HTMLElement>('.pop')!;
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        close(box);
+        btn.setAttribute('aria-expanded', String(!open));
+        pop.toggleAttribute('hidden', open);
+      });
+      pop.addEventListener('click', (e) => e.stopPropagation());
+    });
+    document.addEventListener('click', () => close());
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  }
+</script>

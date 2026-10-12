@@ -1,0 +1,214 @@
+---
+title: ROI-driven decision-making
+order: 6
+unit: 2
+unitName: Go-To-Market
+slug: 06-roi-decision-making
+takeaway: Make data-driven decisions that improve unit economics and allocate budgets effectively.
+---
+
+<Callout title="The opening question">
+Do artificial sweeteners cause a decline in cognitive function?
+</Callout>
+
+Headlines said yes. But the study's participants were heavy or obese, so obesity itself may explain the decline, not the sweeteners. **Correlation is not causation.** Always ask the follow-up question: one extra data point can change the whole interpretation. Marketing data is part of a story, and stories need context.
+
+## 1. Performance language
+
+### Metrics, KPIs and goals
+
+<Grid cols="3">
+  <Card title="Metrics" kicker="Raw">Neutral, quantitative numbers: impressions, sales, speed.</Card>
+  <Card title="KPIs" kicker="Selected" tone="purple">The metrics that signal health, progress or problems. Like a car's fuel gauge or engine temperature.</Card>
+  <Card title="Goals" kicker="Time-bound" tone="pink">A target outcome defined by strategic priorities. The destination in your GPS.</Card>
+</Grid>
+
+KPIs can change goals: if the fuel gauge drops, the goal shifts from reaching the destination to finding a petrol station.
+
+### Data taxonomy
+Pairings that help build a better decision-making system:
+
+| Lens | | | Examples |
+|---|---|---|---|
+| **By source** | **Primary**: collected by you (1st party) | **Secondary**: collected by others (2nd/3rd party) | Customer contacts, AOV · a partner's contacts, Statista |
+| **By value** | **Vanity**: doesn't correlate with impact | **Impact**: moves the business forward | Ad impressions, page views · deals won, qualified leads |
+| **By data type** | **Quantitative**: numbers, the *what* | **Qualitative**: words, the *why* | Number of leads, CVR · open-text survey answers |
+| **By time horizon** | **Leading**: predicts future outcomes | **Lagging**: the final result | Pipeline, activations, add-to-carts · sales, revenue, churn |
+
+**North Star metric:** a leading indicator describing the moment customer value is realised, which predicts revenue. Examples: creating a playlist on Spotify, making a number of connections in the first days on Facebook.
+
+**The same metric can be leading and lagging.** Add-to-cart is lagging for site visits but leading for revenue. It depends on your business model and journey.
+
+**AI tip:** turn qualitative data into quantitative by having AI count themes, frequencies and trends in open-ended answers.
+
+<Callout tone="warn" title="The vanity trap">
+A company earning 60% of its revenue from organic search pushed its team to grow page views and clicks. Page views grew, but the **converting** content declined. By the time anyone noticed, the damage was hard to undo, because SEO is slow to fix. Track impact metrics alongside vanity metrics.
+</Callout>
+
+### UTM parameters
+UTMs tag links so you can track and classify traffic across platforms that don't share data with each other (e.g. Meta ads → Google Analytics).
+
+```
+https://join.code.berlin/?utm_source=meta&utm_medium=cpc&utm_campaign={{campaign.name}}&utm_term={{adset.name}}&utm_content={{ad.name}}&ad_id={{ad.id}}&placement={{placement}}
+```
+
+**Structure:** base URL + `?` + key=value pairs joined by `&`.
+
+| Key | Meaning | Example |
+|---|---|---|
+| `utm_source` | Where the traffic comes from | google, meta, newsletter |
+| `utm_medium` | Type of traffic | cpc, organic, referral, affiliate |
+| `utm_campaign` | The campaign | BlackFriday2026 |
+| `utm_term` | Keyword or ad set targeted | masters in berlin |
+| `utm_content` | The creative / ad variation | video_v2 |
+
+Values can be **static** (typed by hand, like `meta`) or **dynamic** (placeholders in curly brackets that the platform fills in, like `{{ad.id}}`). Google's ecosystem fills UTMs automatically; elsewhere you set them up yourself, with a free UTM builder or a spreadsheet with dropdowns. Bigger set-ups need strict naming conventions.
+
+With UTMs you can group data however you need: by cost centre (influencer vs performance marketing), medium (paid search vs paid social), source (Google vs Bing vs Meta), and drill down by campaign, creative, offer or product.
+
+<Exercise title="UTM orientation">
+1. **Deconstruct UTMs:** click ads in the Meta Ads Library and sponsored Google results, and read the UTMs they use. Competitors' URLs reveal campaign structure, naming conventions and targeted keywords. Not every company uses UTMs.
+2. **Build your own:** search "UTM builder" and create a UTM for a fictional campaign.
+</Exercise>
+
+### Analysis granularity
+Typical ways to slice a report:
+- **Business (campaign) structure:** medium → source → campaign → content/creative → term → landing page
+- **Product:** category → product type → individual SKU
+- **Period / lookback:** week, month, year; trend over time vs a single snapshot
+- **Report type:** **aggregate** (a snapshot of a timeframe) vs **cohort** (one group of users followed over time)
+
+**Cohort analysis** follows customers acquired in a given period (e.g. Black Friday) through their lifetime: revenue in month 0, month 1, month 2… Comparing cohorts by channel, campaign or month shows falling retention or changing customer quality that an aggregate report hides.
+
+### Reading a real dashboard
+Buffer publishes its metrics openly. On it, blog visits rose then fell, site visits stayed flat, sign-ups rose slightly, and trials fell while sign-ups rose. Possible readings: the wrong type of traffic, a longer sales cycle, or the wrong acquisition focus. **Metrics don't always move together**; interpret them in context.
+
+**Insight from data:** one company assumed customers refer friends after experiencing the product. The data showed they shared referral links right **at payment**, before receiving anything: they felt part of something. The fix was to move the referral prompt into checkout.
+
+## 2. Marketing and the P&L
+
+### Two statements
+
+| | P&L (profit & loss) | Cash flow |
+|---|---|---|
+| **Tracks** | When money is *incurred* | When money *moves* |
+| **Used for** | Overall business performance and profitability | Liquidity and runway |
+
+Example: a freelance lecturer delivers a course from September to November but is paid in December. The cost is incurred in Q4; the cash moves in Q1.
+
+### The P&L, top to bottom
+
+<Layers
+  items={[
+    { name: "Revenue", desc: "Gross and net (after discounts and returns), split by revenue stream" },
+    { name: "COGS", desc: "Cost of goods sold: production, quality, cost of sales (payment fees, delivery)" },
+    { name: "Customer acquisition", desc: "Ad spend, influencers; sometimes team and tools too" },
+    { name: "OPEX", desc: "Operating expenses: payroll, rent, software & IT, legal, accounting" },
+    { name: "EBITDA", desc: "Operating profit: earnings before interest, tax, depreciation and amortisation" }
+  ]}
+/>
+
+P&Ls run over months, quarters or years, show money and percentages, and break categories into subcategories as needed. Every cost line that grows shrinks the bottom line.
+
+### Marketing efficiency
+
+<Grid cols="2">
+  <Formula label="Marketing efficiency (spend ratio)">UA spend ÷ net revenue</Formula>
+  <Formula label="ROAS">net revenue ÷ UA spend</Formula>
+</Grid>
+
+UA = user acquisition. A **lower** efficiency percentage, or a **higher** ROAS, means better efficiency. If your ratio rises from 25% to 30%, efficiency got worse.
+
+Each business type has its own benchmark for the share of revenue spent on marketing:
+
+| | Seed / launch | Growth / scale | Mature |
+|---|---|---|---|
+| **B2B SaaS / DTC** | 25% | 15% | Under 10% |
+| **DTC e-commerce** | 30% | 25% | Under 15% |
+
+- Reference only: treat them as a ±5% range.
+- They cover **user acquisition spend only**. Add about 5–10 percentage points for personnel, tools, etc.
+- Early-stage companies may exceed them (budget can be bigger than revenue) and normalise over time.
+
+**Forecast and track back:** with no history, base the budget on projected revenue; then measure the actual percentage and watch its direction.
+
+## 3. Attribution of credit
+
+### The problem
+Which channel generated the sale?
+- Every distribution channel **self-attributes**: Google Ads and Meta Ads both claim the same sale. A double-attribution overlap of about 5–15% is typical.
+- Privacy policies make sharing data between platforms increasingly hard.
+- The result: uncertainty about marketing investment and effectiveness.
+
+### Five models
+
+| Model | How credit is assigned | Example |
+|---|---|---|
+| **Last touch** | 100% to the last touchpoint | Organic search gets the sale, even though an ad came first |
+| **First touch** | 100% to the first touchpoint | The influencer post gets the sale, even though the buyer later searched |
+| **Multi-touch** | Split evenly or weighted | Even: 5 touches = 20% each. Weighted: e.g. last 70%, first 20%, middle 10% |
+| **Incremental / lift** | Compare results with vs without | Switch campaigns on/off, or run ads in one city but not another, and compare sales |
+| **Media mix model (MMM)** | Statistical regression of historical changes in spend and sales | Needs lots of history; typically run quarterly or twice a year |
+
+### Challenges
+- **Match rates**: cookie consent and ad blockers leave a share of traffic unknown (around 30% in the lecture's example)
+- It **assumes all data is connected**: e.g. influencer voucher codes leak to coupon sites
+- It's **descriptive, not predictive**: it shows the past, not the best future allocation
+- It **doesn't account for earned media**: press, AI overviews, organic brand searches
+- It can be **affected by business terms**
+- It shifts your focus to the **trees instead of the forest**
+
+**Example: TV attribution.** A company spending £1–1.5M a month on TV had its agency measure website traffic in the five minutes before and after each ad slot. That ignores brand-building and delayed effects entirely.
+
+**Example: a fit-for-purpose model.** Standard GA4 gave the last touch to organic search. A custom rule gave 100% to the voucher source whenever a voucher code was used: if an influencer gave the code and the buyer then googled the brand, the influencer drove the sale, not Google.
+
+### Recommendations
+- The **simpler** your set-up, the less you need to worry
+- Minimise **"unassigned"** data
+- Ensure **consistency**: track the same way over time
+- Keep it **fit for purpose**
+- Track **2+ models** and compare how they change over time
+- Look at **overall marketing efficiency** and the impact on the P&L
+
+## 4. Optimization levers
+
+<Grid cols="2">
+  <Card title="Growth" kicker="Why we optimise">Scale the top line: get more of what's working.</Card>
+  <Card title="Efficiency" kicker="Why we optimise" tone="purple">Minimise waste by cutting or redirecting resources.</Card>
+</Grid>
+
+### What we can optimise
+
+<Grid cols="3">
+  <Card title="Creative & messaging">Visuals · hooks · angles · body/headline text · formats · quantity</Card>
+  <Card title="Distribution & campaigns" tone="purple">Structure · goals & value · targeting & keywords · bidding (type, amount) · caps & adjustments · email sequences & cadence</Card>
+  <Card title="Data infrastructure" tone="pink">Audience data/lists · signals/events · tracking · product feed info · structured data</Card>
+  <Card title="Conversion & UX" tone="plain">Visuals · content · navigation & journey · behavioural triggers · choice architecture · forms & gate assets · onboarding flow · site performance</Card>
+  <Card title="Offer">Product variety · product qualities · quantity · price & terms · bundling & tiering · referral loops & offers · promos & discounts</Card>
+  <Card title="Sales ops" tone="purple">Sales enablement · sales processes · lead qualification filters</Card>
+</Grid>
+
+<Callout>
+The focus is on interpreting data and making decisions, not manual calculation. Consistent tracking matters more than perfect attribution, and every marketing decision connects back to the P&L.
+</Callout>
+
+## Key terms
+- **Metric**: a raw, neutral number
+- **KPI**: a selected metric that signals health or progress
+- **Goal**: a time-bound target outcome
+- **Vanity vs impact metric**: doesn't correlate with impact / moves the business forward
+- **Leading vs lagging indicator**: predicts outcomes / is the final result
+- **North Star metric**: a leading indicator marking the moment customer value is realised, predictive of revenue
+- **UTM parameters**: link tags (source, medium, campaign, term, content) that classify traffic
+- **Cohort analysis**: following one group of customers over time
+- **P&L**: profit and loss statement; tracks when money is incurred
+- **Cash flow**: tracks when money actually moves
+- **COGS**: cost of goods sold
+- **OPEX**: operating expenses
+- **EBITDA**: earnings before interest, tax, depreciation and amortisation (operating profit)
+- **Marketing efficiency**: UA spend ÷ net revenue
+- **ROAS**: net revenue ÷ UA spend
+- **Self-attribution**: each ad platform claiming the conversion for itself
+- **Last / first / multi-touch attribution**: credit to last / first / several touchpoints
+- **Lift (incrementality) study**: comparing outcomes with and without a campaign
+- **MMM**: media mix model; regression of historical spend against sales

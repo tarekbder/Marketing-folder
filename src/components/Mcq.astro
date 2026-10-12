@@ -1,0 +1,162 @@
+---
+interface Question {
+  id: string;
+  question: string;
+  options: string[];
+  answer: number;
+  explanation: string;
+}
+interface Props {
+  topic: string;
+  questions: Question[];
+}
+const { topic, questions } = Astro.props;
+---
+<div class="quiz" data-topic={topic} data-questions={JSON.stringify(questions)}>
+  <div class="quiz-status" data-status></div>
+  <div data-stage aria-live="polite"></div>
+  <noscript>This quiz needs JavaScript.</noscript>
+</div>
+
+<script>
+  type Q = { id: string; question: string; options: string[]; answer: number; explanation: string };
+  type Saved = { best: number | null; wrong: string[] };
+  type Item = { q: Q; opts: string[]; ans: number };
+
+  const esc = (s: string) =>
+    s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string);
+
+  function shuffle<T>(arr: T[]): T[] {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  // Progress lives in sessionStorage only: survives a refresh, cleared when the tab closes.
+  function load(key: string): Saved {
+    try {
+      const s = JSON.parse(sessionStorage.getItem(key) || 'null');
+      if (s) return { best: typeof s.best === 'number' ? s.best : null, wrong: Array.isArray(s.wrong) ? s.wrong : [] };
+    } catch {}
+    return { best: null, wrong: [] };
+  }
+  function store(key: string, s: Saved) {
+    try {
+      sessionStorage.setItem(key, JSON.stringify(s));
+    } catch {}
+  }
+
+  document.querySelectorAll<HTMLElement>('.quiz').forEach((root) => {
+    const all: Q[] = JSON.parse(root.dataset.questions || '[]');
+    const key = `mcq:${root.dataset.topic}`;
+    const statusEl = root.querySelector<HTMLElement>('[data-status]')!;
+    const stage = root.querySelector<HTMLElement>('[data-stage]')!;
+    let saved = load(key);
+    saved.wrong = saved.wrong.filter((id) => all.some((q) => q.id === id));
+    let run: Item[] = [];
+    let idx = 0;
+    let score = 0;
+    let wrongThisRun: string[] = [];
+    let mode: 'all' | 'wrong' = 'all';
+
+    function renderStatus() {
+      const best = saved.best === null ? '–' : `${saved.best}/${all.length}`;
+      statusEl.innerHTML = `
+        <span>Best this session: <b>${best}</b></span>
+        <span>To review: <b>${saved.wrong.length}</b></span>
+        ${saved.wrong.length && mode === 'all' ? '<button type="button" class="linkbtn" data-review>Review wrong answers</button>' : ''}
+        <button type="button" class="linkbtn push" data-reset>Reset progress</button>`;
+      statusEl.querySelector('[data-reset]')!.addEventListener('click', () => {
+        saved = { best: null, wrong: [] };
+        store(key, saved);
+        start('all');
+      });
+      statusEl.querySelector('[data-review]')?.addEventListener('click', () => start('wrong'));
+    }
+
+    function start(m: 'all' | 'wrong') {
+      mode = m;
+      const pool = m === 'wrong' ? all.filter((q) => saved.wrong.includes(q.id)) : all;
+      // Question order stays fixed; answer options are shuffled and the correct index remapped.
+      run = pool.map((q) => {
+        const order = shuffle(q.options.map((_, i) => i));
+        return { q, opts: order.map((i) => q.options[i]), ans: order.indexOf(q.answer) };
+      });
+      idx = 0;
+      score = 0;
+      wrongThisRun = [];
+      renderStatus();
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const item = run[idx];
+      const pct = (idx / run.length) * 100;
+      stage.innerHTML = `
+        <div class="qmeta"><span>${mode === 'wrong' ? 'Review · ' : ''}Question ${idx + 1} of ${run.length}</span><span>Score ${score}</span></div>
+        <div class="progress"><i style="width:${pct}%"></i></div>
+        <p class="qtext">${esc(item.q.question)}</p>
+        <div>${item.opts
+          .map((o, i) => `<button type="button" class="opt" data-i="${i}"><span class="optkey">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`)
+          .join('')}</div>
+        <div data-after></div>`;
+      stage.querySelectorAll<HTMLButtonElement>('.opt').forEach((b) => b.addEventListener('click', () => choose(Number(b.dataset.i))));
+    }
+
+    function choose(i: number) {
+      const item = run[idx];
+      const btns = stage.querySelectorAll<HTMLButtonElement>('.opt');
+      btns.forEach((b) => (b.disabled = true));
+      btns[item.ans].classList.add('right');
+      const correct = i === item.ans;
+      if (correct) score++;
+      else {
+        btns[i].classList.add('wrong');
+        wrongThisRun.push(item.q.id);
+      }
+      const last = idx === run.length - 1;
+      const after = stage.querySelector<HTMLElement>('[data-after]')!;
+      after.innerHTML = `
+        <div class="expl"><b>${correct ? 'Correct.' : 'Not quite.'}</b> ${esc(item.q.explanation)}</div>
+        <div class="btnrow"><button type="button" class="btn" data-next>${last ? 'See score' : 'Next question →'}</button></div>`;
+      const next = after.querySelector<HTMLButtonElement>('[data-next]')!;
+      next.addEventListener('click', () => {
+        if (last) finish();
+        else {
+          idx++;
+          renderQuestion();
+        }
+      });
+      next.focus({ preventScroll: true });
+    }
+
+    function finish() {
+      if (mode === 'all') {
+        saved.best = saved.best === null ? score : Math.max(saved.best, score);
+        saved.wrong = wrongThisRun.slice();
+      } else {
+        saved.wrong = saved.wrong.filter((id) => wrongThisRun.includes(id));
+      }
+      store(key, saved);
+      const n = run.length;
+      const reviewMode = mode === 'wrong';
+      mode = 'all';
+      renderStatus();
+      stage.innerHTML = `
+        <p class="cap">${reviewMode ? 'Review round' : 'Round'} complete</p>
+        <p class="score">${score}/${n}</p>
+        <p>${wrongThisRun.length ? `${wrongThisRun.length} answered wrong, saved for review.` : 'No wrong answers this round.'}</p>
+        <div class="btnrow">
+          <button type="button" class="btn" data-again>Retry all</button>
+          ${saved.wrong.length ? `<button type="button" class="btn alt" data-wrong>Retry wrong only (${saved.wrong.length})</button>` : ''}
+        </div>`;
+      stage.querySelector('[data-again]')!.addEventListener('click', () => start('all'));
+      stage.querySelector('[data-wrong]')?.addEventListener('click', () => start('wrong'));
+    }
+
+    start('all');
+  });
+</script>

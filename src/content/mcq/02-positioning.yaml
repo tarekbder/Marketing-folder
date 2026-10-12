@@ -1,0 +1,201 @@
+topic: 02-positioning
+questions:
+  - id: q1
+    question: "What are the two main reasons a brand strategy fails?"
+    options:
+      - "It's too expensive and too slow"
+      - "It has no logo and no tagline"
+      - "It ignores competitors and investors"
+      - "It's irrelevant and not actionable"
+    answer: 3
+    explanation: "A strategy fails when it doesn't connect to what customers care about (irrelevant) or when nobody can turn it into decisions (not actionable)."
+
+  - id: q2
+    question: "Which layer defines how the brand's identity is codified and expressed to the customer?"
+    options:
+      - "Brand strategy"
+      - "Marketing strategy"
+      - "Brand assets"
+      - "Value proposition"
+    answer: 2
+    explanation: "Brand strategy defines who the brand is; brand assets codify how that identity is expressed; marketing strategy delivers the value into the customer's hands."
+
+  - id: q3
+    question: "According to the lecture, what is the biggest risk startups face?"
+    options:
+      - "Running out of funding"
+      - "Not learning fast enough"
+      - "Strong competitors"
+      - "Choosing the wrong logo"
+    answer: 1
+    explanation: "Work quick-ish, use good data, generate learnings and adapt."
+
+  - id: q4
+    question: "A survey you design and send to your own customers produces which kind of data?"
+    options:
+      - "Primary data"
+      - "Third-party data"
+      - "Benchmark data"
+      - "Secondary data"
+    answer: 0
+    explanation: "Primary (1st-party) data is collected by you. Secondary data is collected by others."
+
+  - id: q5
+    question: "Qualitative data mainly tells you…"
+    options:
+      - "What is happening"
+      - "Who your competitors are"
+      - "How much it costs"
+      - "Why it is happening"
+    answer: 3
+    explanation: "Quantitative = numerical, the 'what'. Qualitative = verbal, the 'why'."
+
+  - id: q6
+    question: "Which statement is an insight rather than a data point?"
+    options:
+      - "64% of fitness band users rank battery life as essential"
+      - "65% take supplements for overall health"
+      - "43% name 'scientifically proven' as the most important property"
+      - "Consumers evaluate supplements as medicine, even though EU law classifies them as food"
+    answer: 3
+    explanation: "An insight is what the data means. The others are raw data points the insight is built on."
+
+  - id: q7
+    question: "What are the two problems with the classic 2×2 positioning matrix?"
+    options:
+      - "It ignores price and ignores brand assets"
+      - "We always place ourselves top-right, and it biases our thinking early"
+      - "It's too detailed and too slow to make"
+      - "It only works for B2B and needs paid data"
+    answer: 1
+    explanation: "Picking two axes up front hides the many other axes a category has, and teams tend to put themselves in the best quadrant."
+
+  - id: q8
+    question: "Which is NOT one of the four universal sliders?"
+    options:
+      - "Distraction-free ↔ engagement-rich"
+      - "Product scope (core ↔ all-in-one)"
+      - "Target audience (specialized ↔ universal)"
+      - "Authority source (institutional ↔ relatable)"
+    answer: 0
+    explanation: "Distraction-free ↔ engagement-rich is a category tension drawn from wearables research. The fourth universal slider is perceived value (accessible ↔ premium)."
+
+  - id: q9
+    question: "Why should both ends of a slider be phrased positively?"
+    options:
+      - "Because customers read the sliders"
+      - "So competitors appear weaker"
+      - "It looks better on slides"
+      - "To avoid a good-vs-bad bias when placing brands"
+    answer: 3
+    explanation: "If one end sounds negative, everyone drifts to the 'good' end and the map stops telling you anything."
+
+  - id: q10
+    question: "On the slider map, where is your opportunity?"
+    options:
+      - "At the premium end of every slider"
+      - "In the white space no competitor occupies"
+      - "In the middle of every slider"
+      - "Where most competitors cluster"
+    answer: 1
+    explanation: "The white space is the open position that lets you separate from the competition."
+
+  - id: q11
+    question: "SumUp found cash to be a direct competitor in Germany but not in the UK. What does this show?"
+    options:
+      - "Attention-takers never matter"
+      - "Cash is always a competitor for payment brands"
+      - "Who counts as a competitor depends on the market"
+      - "SumUp positioned itself badly in Germany"
+    answer: 2
+    explanation: "Competitor circles shift by market: direct competitors, weaker or differently positioned players, and attention-takers."
+
+  - id: q12
+    question: "What is a recommended time horizon for positioning?"
+    options:
+      - "Now, up to 1–2 years out, then redo it"
+      - "Only the next quarter"
+      - "10 years, to build a lasting brand"
+      - "Exactly 5 years"
+    answer: 0
+    explanation: "Five-year positioning is too speculative. Position for the near term and repeat the exercise."
+
+  - id: q13
+    question: "Which floor of the positioning pyramid describes the conceptual space a brand occupies in customers' minds?"
+    options:
+      - "Customer needs & gains"
+      - "Key product properties"
+      - "Brand territory"
+      - "Brand topics"
+    answer: 2
+    explanation: "Brand territory sits at the top. It's internal phrasing of the spot you claim."
+
+  - id: q14
+    question: "\"Smartwatches disturb my focus and require my attention\" belongs on which floor?"
+    options:
+      - "Customer needs & gains"
+      - "Brand territory"
+      - "Key product properties"
+      - "Brand topics"
+    answer: 0
+    explanation: "It's a need: a friction the customer is trying to resolve."
+
+  - id: q15
+    question: "How many brand topics should a pyramid usually have?"
+    options:
+      - "3–4"
+      - "1"
+      - "5–7"
+      - "As many as needed"
+    answer: 0
+    explanation: "3–4 repeatable pillars with enough content depth. Boards with 5–7 were told to cut."
+
+  - id: q16
+    question: "What's the test that a brand territory has failed?"
+    options:
+      - "It's longer than 10 words"
+      - "You can swap in a competitor's name and it still works"
+      - "It mentions a feature"
+      - "It uses the word 'companion'"
+    answer: 1
+    explanation: "If it fits a competitor equally well, it isn't distinctive."
+
+  - id: q17
+    question: "Why did Fitbit Air choose 'companion' instead of 'coach' in its brand territory?"
+    options:
+      - "'Coach' is trademarked"
+      - "Competitors already use 'companion'"
+      - "'Companion' is shorter"
+      - "'Coach' implies nagging, which clashes with distraction-free"
+    answer: 3
+    explanation: "Word choice in the territory must stay consistent with the needs it answers."
+
+  - id: q18
+    question: "In the value proposition template, what does the 'competitive space' part describe?"
+    options:
+      - "Our brand assets"
+      - "Our price compared with competitors"
+      - "What competitors offer and for whom"
+      - "Our audience, their problem and our benefit"
+    answer: 2
+    explanation: "'While [competitors] offer [category] for [their audience]…' The core promise then covers our audience, problem, product and benefit."
+
+  - id: q19
+    question: "In the JTBD milkshake case, what job were customers hiring the milkshake for?"
+    options:
+      - "Breakfast nutrition"
+      - "A treat for their kids"
+      - "A morning break during the commute"
+      - "A post-workout snack"
+    answer: 2
+    explanation: "Understanding the real job reframes who the competition is and what to improve."
+
+  - id: q20
+    question: "Which red-teaming question checks the value proposition?"
+    options:
+      - "Are the insights aligned with the pyramid?"
+      - "Do the customer problem and the solution contrast each other?"
+      - "Is the white space clearly separate from the competition?"
+      - "Is anything too generic?"
+    answer: 1
+    explanation: "A strong value proposition shows a clear before/after between the problem and the solution."

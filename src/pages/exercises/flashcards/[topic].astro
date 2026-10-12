@@ -1,0 +1,29 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Flashcards from '../../../components/Flashcards.astro';
+import { getCollection } from 'astro:content';
+import { sortedTopics, pad } from '../../../lib/topics';
+
+export async function getStaticPaths() {
+  const decks = await getCollection('flashcards');
+  const topics = await sortedTopics();
+  return decks.map((deck) => ({ params: { topic: deck.id }, props: { deck, topic: topics.find((t) => t.id === deck.id) ?? null } }));
+}
+const { deck, topic } = Astro.props;
+const title = topic?.data.title ?? deck.id;
+---
+<Base title={`Flashcards · ${title}`}>
+  <header class="hero" slot="hero">
+    <div class="wrap">
+      <span class="tag">Flashcards</span>{topic && <span class="tag pink">Lecture {pad(topic.data.order)}</span>}
+      <h1>{title}</h1>
+      <p class="lead">{deck.data.cards.length} cards. Mark each one "Know it" or "Still learning", then review only the ones you're still learning.</p>
+    </div>
+  </header>
+  <Flashcards topic={deck.id} cards={deck.data.cards} />
+  <div class="btnrow">
+    {topic && <a class="btn alt" href={`/topics/${topic.id}/`}>← Read the explainer</a>}
+    <a class="btn alt" href={`/exercises/mcq/${deck.id}/`}>Quiz for this lecture</a>
+    <a class="btn alt" href="/exercises/">All exercises</a>
+  </div>
+</Base>

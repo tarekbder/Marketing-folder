@@ -1,0 +1,5 @@
+---
+interface Props { cols?: 2 | 3 | 4 | 5 | string }
+const { cols = 2 } = Astro.props;
+---
+<div class={`grid c${cols}`}><slot /></div>

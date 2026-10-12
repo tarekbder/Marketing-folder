@@ -1,0 +1,201 @@
+topic: 03-marketing-ops
+questions:
+  - id: q1
+    question: "Roughly what share of the tool capabilities companies pay for is actually used?"
+    options:
+      - "90%"
+      - "75%"
+      - "33%"
+      - "5%"
+    answer: 2
+    explanation: "Only about a third of paid capabilities get used, which is why tool utilisation audits matter."
+
+  - id: q2
+    question: "Which layer sits at the very bottom (backend) of the six-layer marketing stack?"
+    options:
+      - "Data management (DWH, purchase logs, CRM/CDP)"
+      - "Distribution & acquisition"
+      - "Experience & transaction"
+      - "Productivity & orchestration"
+    answer: 0
+    explanation: "From backend to customer-facing: data management → tracking & analytics → productivity & orchestration → production & enablement → experience & transaction → distribution & acquisition."
+
+  - id: q3
+    question: "Landing pages, lead forms and A/B testing tools belong to which layer?"
+    options:
+      - "Production & enablement"
+      - "Tracking & analytics"
+      - "Data management"
+      - "Experience & transaction"
+    answer: 3
+    explanation: "Experience & transaction covers the touchpoints where customers interact: shopfront, LPs, lead forms, A/B tests."
+
+  - id: q4
+    question: "What does Google Tag Manager (GTM) let marketers do?"
+    options:
+      - "Write blog posts automatically"
+      - "Add tracking pixels to the website without a developer for every new tool"
+      - "Store customer data in a warehouse"
+      - "Buy ads on Google Search"
+    answer: 1
+    explanation: "GTM is a container code on the site; new tags and pixels are added inside it."
+
+  - id: q5
+    question: "What are product feeds used for?"
+    options:
+      - "Sending newsletters"
+      - "Powering dynamic and carousel ads on Google, Meta and others"
+      - "Tracking website speed"
+      - "Managing project tasks"
+    answer: 1
+    explanation: "A feed lists every product's metadata (price, images, attributes), so platforms can build ads without manual setup per product."
+
+  - id: q6
+    question: "Which of these is a risk of a badly managed marketing stack named in the lecture?"
+    options:
+      - "Too much brand awareness"
+      - "Lower ad prices"
+      - "Faster decision-making"
+      - "No single source of truth (data noise and misalignment)"
+    answer: 3
+    explanation: "Other risks: resource drain, attention drain, slower website, slow execution and bad decisions."
+
+  - id: q7
+    question: "A company sums all revenue reported by Google Ads and Meta Ads and gets more than the company actually earned. Why?"
+    options:
+      - "Each platform self-attributes and claims credit for the same conversions"
+      - "The finance team made a typo"
+      - "Ads revenue includes VAT"
+      - "Meta counts returns twice"
+    answer: 0
+    explanation: "Different attribution windows and models mean platforms over-claim. You need your own source of truth."
+
+  - id: q8
+    question: "Sending a Slack message whenever a new lead signs up is which type of workflow?"
+    options:
+      - "Agentic"
+      - "Probabilistic"
+      - "Deterministic & predefined: plain automation, no AI needed"
+      - "Mostly deterministic with AI enrichment"
+    answer: 2
+    explanation: "A clear A → B rule. Not everything needs AI."
+
+  - id: q9
+    question: "Enriching a new B2B lead with headcount, decision makers and funding data to score it is best handled by…"
+    options:
+      - "A fully manual process"
+      - "An autonomous agent with no rules"
+      - "A TV campaign"
+      - "Automation + AI (mostly deterministic)"
+    answer: 3
+    explanation: "The steps are known; AI injects the enrichment. The lecture uses this as its 'mostly deterministic' example."
+
+  - id: q10
+    question: "When is an agentic (probabilistic) workflow the right choice?"
+    options:
+      - "When the trigger is known but the best response path varies"
+      - "When the process is a fixed A → B → C rule"
+      - "When no data is available"
+      - "When you want a human to do everything"
+    answer: 0
+    explanation: "Agents decide if, when and how to act, for example scanning account data and alerting the team with context."
+
+  - id: q11
+    question: "Where is the most important place to put a human in the loop?"
+    options:
+      - "Before any internal report is generated"
+      - "Before customer-facing actions go out"
+      - "Only at the end of the year"
+      - "Nowhere: AI should run autonomously"
+    answer: 1
+    explanation: "Review before anything reaches customers; automate the repetitive execution."
+
+  - id: q12
+    question: "For cart-abandonment emails, where does the human come in?"
+    options:
+      - "A human writes the template once; automation sends it"
+      - "A human sends every email manually"
+      - "An AI agent writes a new email for each customer, unchecked"
+      - "No human is ever involved"
+    answer: 0
+    explanation: "Transactional emails are rule-based: human-written template, automated send."
+
+  - id: q13
+    question: "Which three goals for using AI in marketing does the lecture name?"
+    options:
+      - "Cut staff, cut budget, cut tools"
+      - "More posts, more ads, more emails"
+      - "Reduce effort, increase value, unlock new capabilities"
+      - "Brand, reach, revenue"
+    answer: 2
+    explanation: "Example of a new capability: launching a fully branded shop in a day with AI-generated visuals. The warning: don't over-engineer too soon."
+
+  - id: q14
+    question: "A company has about €1–5M revenue. According to the maturity reference, roughly how many tools would you expect?"
+    options:
+      - "~5–10"
+      - "~10–25"
+      - "~20–40"
+      - "More than 50"
+    answer: 1
+    explanation: "Validation (under €500k): ~5–10 · early scale (€1–5M): ~10–25 · growth (€10–50M): ~20–40 · enterprise: 50+. A reference, not a prescription."
+
+  - id: q15
+    question: "Why does D2C e-commerce typically need more tools than B2B lead generation?"
+    options:
+      - "Because e-commerce has no CRM"
+      - "Because B2B is not allowed to use analytics"
+      - "Because of shop-optimisation apps (e.g. the Shopify ecosystem), loyalty, feeds and extra analytics"
+      - "Because e-commerce companies are always larger"
+    answer: 2
+    explanation: "The lecture's examples: a lead-gen company with ~30 tools vs an e-commerce company with ~48."
+
+  - id: q16
+    question: "A tool costs a lot of effort but adds little value. Which zone is it in, and what do you do?"
+    options:
+      - "Target zone: protect and scale"
+      - "Core zone: automate"
+      - "Question zone: prune or consolidate"
+      - "Waste zone: kill or negotiate"
+    answer: 3
+    explanation: "High effort, low value = waste. The guiding question there: is it a duplicate?"
+
+  - id: q17
+    question: "A tool needs little effort and adds high value. Which zone?"
+    options:
+      - "Waste zone"
+      - "Target zone: protect and scale"
+      - "Question zone"
+      - "Core zone"
+    answer: 1
+    explanation: "That's the ideal state. Aim to move as many tools as possible here."
+
+  - id: q18
+    question: "What is a sensible stack choice for a founder tracking their first 10–50 customers?"
+    options:
+      - "An enterprise CDP"
+      - "A custom data warehouse"
+      - "A full multi-touch attribution model"
+      - "A simple Google spreadsheet until automation becomes necessary"
+    answer: 3
+    explanation: "Minimum required process: don't buy a full CRM before you need sequencing and automation."
+
+  - id: q19
+    question: "What is the maximum GDPR fine in the higher tier?"
+    options:
+      - "€1 million or 1% of revenue"
+      - "€5 million flat"
+      - "Up to €20 million or 4% of total annual revenue"
+      - "There are no financial penalties"
+    answer: 2
+    explanation: "Lower tier: up to €10M or 2%. There are also non-financial penalties such as processing bans or data deletion."
+
+  - id: q20
+    question: "Which of these is a GDPR basic named in the lecture?"
+    options:
+      - "Active consent (checkbox, double opt-in, cookie consent, unsubscribe)"
+      - "Storing all customer data on personal laptops"
+      - "Sharing customer lists by email to speed things up"
+      - "Pre-ticked consent boxes"
+    answer: 0
+    explanation: "Also: a right-to-be-forgotten process and avoiding manual access to customer data."
