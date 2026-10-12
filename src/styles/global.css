@@ -337,15 +337,29 @@ pre code { background: none; border: 0; padding: 0; white-space: pre-wrap; word-
 /* ============ Lists of topics etc. ============ */
 .unit-head { margin: 36px 0 12px; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
 .tlist { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-.tcard { display: block; text-decoration: none; color: var(--text); border: 1.5px solid var(--line); background: var(--paper); padding: 16px; box-shadow: 5px 5px 0 var(--purple); transition: transform .1s, box-shadow .1s; }
-.tcard:hover { background: var(--paper); color: var(--text); transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--purple); }
-.tcard .n { font: 500 12px "DM Mono", monospace; color: var(--muted); }
+.tcard { --accent: var(--purple); display: block; text-decoration: none; color: var(--text); border: 1.5px solid var(--line); background: var(--paper); padding: 16px; box-shadow: 5px 5px 0 var(--accent); transition: transform .12s, box-shadow .12s, background-color .12s, color .12s; }
+.tcard.green { --accent: var(--green); }
+.tcard.pink { --accent: var(--pink); }
+.tcard .n { font: 500 12px "DM Mono", monospace; color: var(--muted); transition: color .12s; }
 .tcard h3 { margin: 4px 0 8px; font-size: 16px; }
 .tcard p { margin: 0; font-size: 14px; }
-.tcard.green { box-shadow: 5px 5px 0 var(--green); }
-.tcard.pink { box-shadow: 5px 5px 0 var(--pink); }
-.tcard.green:hover { box-shadow: 7px 7px 0 var(--green); }
-.tcard.pink:hover { box-shadow: 7px 7px 0 var(--pink); }
+/* Highlight on hover / keyboard focus: card fills with its accent colour */
+.tcard:hover, .tcard:focus-visible { background: var(--accent); color: var(--on-accent); border-color: var(--line); transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--line); }
+.tcard:hover .n, .tcard:focus-visible .n { color: var(--on-accent); }
+/* Touch screens (no hover): flash each card once on load to show it's tappable */
+@keyframes tcard-flash {
+  0%, 100% { background: var(--paper); color: var(--text); transform: none; }
+  35%, 60% { background: var(--accent); color: var(--on-accent); transform: translate(-2px, -2px); }
+}
+@media (hover: none) {
+  .home-sections .tcard { animation: tcard-flash 1.1s ease-in-out .3s 1 backwards; }
+  .home-sections .tcard:nth-child(2) { animation-delay: .5s; }
+  .home-sections .tcard:nth-child(3) { animation-delay: .7s; }
+  .tcard:active { background: var(--accent); color: var(--on-accent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tcard { animation: none; transition: none; }
+}
 
 .pager { display: flex; justify-content: space-between; gap: 12px; margin: 40px 0 10px; flex-wrap: wrap; }
 .pager a { flex: 1 1 240px; border: 1.5px solid var(--line); background: var(--cream); padding: 12px 14px; text-decoration: none; box-shadow: 4px 4px 0 var(--line); }
