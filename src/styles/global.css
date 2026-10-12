@@ -115,10 +115,10 @@ pre code { background: none; border: 0; padding: 0; white-space: pre-wrap; word-
   text-decoration: none;
   background: transparent;
 }
-.mainnav a:hover { background: var(--lime); color: var(--on-accent); border-color: var(--lime); }
-.mainnav a[aria-current="page"] { background: var(--green); color: var(--on-accent); border-color: var(--green); }
 .theme-toggle { cursor: pointer; min-width: 38px; }
 .theme-toggle:hover { background: var(--purple); color: #fff; }
+.mainnav a:hover { background: var(--lime); color: var(--on-accent); border-color: var(--lime); }
+.mainnav a[aria-current="page"] { background: var(--green); color: var(--on-accent); border-color: var(--green); }
 
 /* ============ Hero ============ */
 .hero { border-bottom: 2px solid var(--line); padding: 38px 0 30px; background: var(--cream); }
